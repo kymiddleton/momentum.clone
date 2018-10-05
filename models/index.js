@@ -3,8 +3,3 @@ module.exports = {
     todo: require("./todoLog"),
     links: require("./linksLog")
 };
-
-
-module.exports = {
-
-}
