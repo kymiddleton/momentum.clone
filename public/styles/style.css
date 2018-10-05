@@ -1,4 +1,19 @@
+/* Body */
+body {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("../images/Island.jpg");
+    /* background-size: cover; */
+    /* background-repeat: repeat; */
+    padding-top: 100px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+
 /* Header */
+
 
 
 /* Main Nav */

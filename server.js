@@ -21,7 +21,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-require('./routes/api-routes.js')(app);
+require('./routes/api-routes-links.js')(app);
+require('./routes/api-routes-todo.js')(app);
 require('./routes/html-routes.js')(app);
   
 //Set up promises with mongoose
@@ -39,4 +40,3 @@ mongoose.connect(
 app.listen(PORT, function(){
     console.log(`App is now listening on PORT ${PORT}`)
   })
-  
