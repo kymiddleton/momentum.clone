@@ -7,6 +7,7 @@ module.exports = function (app) {
 
     // GET request: Route for retrieving todo from the database.
     app.get('/api/todoLog', function (req, res) {
+        console.log("IMPORTANT:", db)
         db.todo.find({})
             .then(function (dbtodo) {
                 res.json(dbtodo);

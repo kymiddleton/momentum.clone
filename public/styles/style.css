@@ -2,7 +2,7 @@
 body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
-    background-image: url("Mountains.jpg");
+    background-image: url("../images/Island.jpg");
     /* background-size: cover; */
     /* background-repeat: repeat; */
     padding-top: 100px;
