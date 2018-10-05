@@ -1,34 +1,111 @@
-/* Body */
 body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
+    color: white;
     background-image: url("../images/Island.jpg");
-    /* background-size: cover; */
-    /* background-repeat: repeat; */
-    padding-top: 100px;
-    padding-left: 60px;
-    padding-right: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    opacity: 1;
 }
 
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.full {
+    height: 100%;
+}
+
+/* Top */
+.top-row{
+    position:absolute;
+    top:0;
+    left:25px;
+    right:25px;
+    font-size: 20px;
+}
+.top-left {
+    position: relative;
+    flex: 1 0 auto;
+}
+
+#quicklinks {
+    margin-top: 25px;
+}
+/* Links */
 
 
-/* Header */
-
-
-
-/* Main Nav */
-
-
+/* Center */
+.center {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 45%;
+}
 
 /* Clock */
 
 
+.greeting {
+    display: block;
+    font-size: 337.5%;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* Center Below */
+.center-below {
+    display: block;
+    margin-top: 45px;
+    text-align: center;
+    font-size: 35px;
+}
+input {
+    width: 600px;
+    margin: 20px auto;
+    padding-top: 25px;
+    background: 0;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    outline: 0;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+/* Bottom */
+.bottom {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.bottom-right {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+ .app todo {
+    position: absolute;
+    padding: 0 15px;
+    font-size: 25px;
+ }
 
 /* Todo */
+#todo {
+    margin-left: 88%;
+    padding-top: 60px;
+    font-size: 20px;
+}
 
 
 
-/* Links */
 
 
 
