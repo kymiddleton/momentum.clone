@@ -36,9 +36,6 @@ $(function () {
         console.log(elem);
         toDoListElement.append(label, elem, elem2)
         output.append(toDoListElement);
-
-
-
     }
 
     //   $('#options').on('click', function (event) {
@@ -47,7 +44,6 @@ $(function () {
     // const div = $('<div>').addClass('option box label');
 
     // div.append('<div>"Edit"</div>')
-
 
     //   });
 
