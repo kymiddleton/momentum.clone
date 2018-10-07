@@ -39,84 +39,7 @@ body {
     margin-top: 25px;
 }
 /* Links */
-#inputbox {
-    background-color: rgb(10, 10, 10);
-    height: auto;
-    width: 200px;
-    opacity: 0.8;
-    color: white;
-    margin: 0px;
-    position: fixed;
-    left: 10px;
-    top: 75px;
-    }
 
-    #linkname {
-    background-color: rgb(10, 10, 10);
-    color: grey;
-    border: none;
-    width: 150px;
-    margin: 0px;
-    padding: 0px;
-    height: 20px;
-    text-align: left;
-    font-size: 18px; 
-    padding-left: 10px;
-    }
-
-   #linkurl {
-        background-color: rgb(10, 10, 10);
-        color: grey;
-        border: none;
-        width: 150px;
-        margin: 0px;
-        padding: 0px;
-        height: 20px;
-        text-align: left;
-        font-size: 18px; 
-        padding-left: 10px;
-        }
-
-    #newlinks {
-        padding-left: 10px;
-        color: grey;
-    }
-   #linkbutton {
-       color: white;
-       background-color: rgb(10, 10, 10);
-       border: none;
-       font-size: 20px;
-   }
-   .chromelink {
-    color: white;
-    background-color: rgb(10, 10, 10);
-    border: none;
-    font-size: 20px;  
-   }
-     .inputlink {
-        display: none;
-    }
-   .slinkinput {
-       padding: 5px;
-       color: white
-   } 
-
-    
-.linkinputs {
-    display: none;
-
-}
-
-.show {
-    display: block;
-}
-.hide {
-    display:  none;
-}
-
-#submitlink {
-    display: none;
-}
 
 /* Center */
 .center {
@@ -134,6 +57,13 @@ body {
     font-size: 337.5%;
     letter-spacing: 0;
     white-space: nowrap;
+}
+
+.bottom-right {
+    position: relative;
+    display: none;
+    bottom: 10px;
+    left:1300px;
 }
 
 /* Center Below */
@@ -172,7 +102,7 @@ input {
     position: absolute;
     padding: 0 15px;
     font-size: 25px;
- }
+}
 
 /* Todo */
 #todo {
@@ -181,9 +111,30 @@ input {
     font-size: 20px;
 }
 
+.icon {
+    position: absolute;
+    padding-top: 100px;
+}
+
+.show {
+    display: block;
+}
 
 
+/* Links */
 
+.hide {
+    display: none;
+}
+
+
+.todo{
+    background-color: rgb(10, 10, 10);
+    opacity: .8;
+    height: 250px;
+    width: 200px;
+    z-index: 3;
+}
 
 
 /* Media Stylesheet */
