@@ -1,13 +1,12 @@
 // Require all models
 const db = require('../models');
 
-
 // ROUTING
 module.exports = function (app) {
 
     // GET request: Route for retrieving todo from the database.
-    app.get('/api/todoLog', function (req, res) {
-        console.log("IMPORTANT:", db)
+    app.get('/api/todoLog', function (req, res) { //Works
+        console.log('--------retrieving---------');
         db.todo.find({})
             .then(function (dbtodo) {
                 res.json(dbtodo);
@@ -18,7 +17,7 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new content, adding a new todo entry to the database.
-    app.post('/api/todoLog', function (req, res) {
+    app.post('/api/todoLog', function (req, res) { //Works
         console.log('------Adding to todo in mongo');
         db.todo.create(req.body)
             .then(function (dbtodo) {
@@ -30,10 +29,9 @@ module.exports = function (app) {
     });
 
     // PUT request: Route for updating todo content / saving updates 
-    app.post('/api/todoLog', function (req, res) {
-        console.log('----> updating <----');
-        
-        db.todo.findOneAndUpdate({ _id: req.body.id }, { $set: { todoStatus: req.body.todoStatus } })
+    app.put('/api/todoLog', function (req, res) { //Works
+        console.log('----> updating <----');        
+        db.todo.findOneAndUpdate({ _id: req.body.id }, { $set: { todoItem: req.body.todoItem, todoStatus: req.body.todoStatus } })
             .then(function (dbtodo) {
                 res.json(dbtodo);
             })
@@ -43,7 +41,7 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes link content
-    app.post('/api/todoLog', function (req, res) {
+    app.delete('/api/todoLog', function (req, res) { //Works
         console.log('--------deleting--------');
         db.todo.findByIdAndRemove(req.body.id, function (err, todo) {
             if (err) return res.status(500).send(err);

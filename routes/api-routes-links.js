@@ -1,12 +1,11 @@
 // Require all models
 const db = require('../models');
 
-
 // ROUTING
 module.exports = function (app) {
 
     // GET request: Route for retrieving links from the database.
-    app.get('/api/linksLog', function (req, res) {
+    app.get('/api/linksLog', function (req, res) { //Works
         db.links.find({})
             .then(function (dblinks) {
                 res.json(dblinks);
@@ -17,7 +16,7 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new content, adding a new Link entry to the database.
-    app.post('/api/linksLog', function (req, res) {
+    app.post('/api/linksLog', function (req, res) {  //working
         console.log('------Adding Link in mongo');
         db.links.create(req.body)
             .then(function (dblinks) {
@@ -29,10 +28,9 @@ module.exports = function (app) {
     });
 
     // PUT request: Route for updating link content / saving updates 
-    app.post('/api/linksLog', function (req, res) {
+    app.put('/api/linksLog', function (req, res) { //Works!
         console.log('----> updating <----');
-        // Find an entry by ID 
-        db.links.findOneAndUpdate({ _id: req.body.id }, { $set: { url: req.body.url } })
+        db.links.findOneAndUpdate({ _id: req.body.id }, { $set: { url: req.body.url, linkName: req.body.linkName } })
             .then(function (dblinks) {
                 res.json(dblinks);
             })
@@ -42,7 +40,7 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes link content
-    app.post('/api/linksLog', function (req, res) {
+    app.delete('/api/linksLog', function (req, res) {  //works!
         console.log('--------deleting--------');
         db.links.findByIdAndRemove(req.body.id, function (err, links) {
             if (err) return res.status(500).send(err);

@@ -16,16 +16,30 @@
 
 <body>
 
-    <div class="grid-container">
-        <div class="background"></div>
-        <div class="to do list">
-            <div id = "todoRender" class="content"></div>
-        </div>
+    </div>
+    <ul id="background" class="background"></ul>
+    <div class="background-overlay"></div>
 
+    <div class="apps">
+        <div class="full"></div>
+        <div class="top-row">
+            <div class="top-left"></div>
+            <div id="quicklinks"></div><span>Links</span>
+        </div>
+        <div class="top-right"></div>
+    </div>
     </div>
 
-<<<<<<< Updated upstream
-=======
+    <div class="center">
+        <div class="app-container clock">
+            <div class="default-clock"> </div>
+        </div>
+        <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>, <span
+                class="name" spellcheck="false">Kyla</span>.
+        </div>
+    </div>
+
+
     <div class="center-below">
         <div class="prompt">
             <h3>What is your main focus for today?</h3>
@@ -39,11 +53,14 @@
         <div class="bottom-right todo" id = "todoright"></div>
         <div id="todo" class="app"><span class = "to do icon" id = "todospan">ToDo</span></div>
     </div>
->>>>>>> Stashed changes
+
+        <div class="bottom-right"></div>
+        <div id="todo" class="app todo"><span>Todo</span></div>
+        <div class="bottom-left" id="bottom-left"></div>
+    </div>
 
 
 
-    <h1>Good evening, </h1>
 
     <script src="/js/clock.js"></script>
     <script src="/js/links.js"></script>
