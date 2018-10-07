@@ -22,15 +22,44 @@ body {
 
 /* Clock */
 
+<<<<<<< Updated upstream
+=======
+.bottom-right {
+    position: relative;
+    display: none;
+    bottom: 10px;
+    left:1300px;
+
+}
+>>>>>>> Stashed changes
 
 
 /* Todo */
 
+.icon {
+    position: absolute;
+    padding-top: 100px;
+}
 
+.show {
+    display: block;
+}
 
+<<<<<<< Updated upstream
 /* Links */
+=======
+.hide {
+    display: none;
+}
+>>>>>>> Stashed changes
 
-
+.todo{
+    background-color: rgb(10, 10, 10);
+    opacity: .8;
+    height: 250px;
+    width: 200px;
+    z-index: 3;
+}
 
 /* Media Stylesheet */
 
