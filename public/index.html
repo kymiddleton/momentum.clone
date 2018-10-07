@@ -24,8 +24,20 @@
         <div class="full"></div>
         <div class="top-row">
             <div class="top-left"></div>
-            <div id="quicklinks"></div><span>Links</span>
+            <div id="quicklinks"></div><span id="favlinks">Links</span>
         </div>
+        <div id="inputbox" class="inputlink">
+                <p class= "slinkinput"><a href="https://www.google.com"><button type="submit" class="chromelink">Chrome Tab</button></a></p>
+                <p class= "slinkinput"><a href="chrome://apps/"><button type="submit" class="chromelink">Apps</button></a></p>   
+                <div id="savedlinks" class= "slinkinput"></div>
+                <p id="newlinks" class= "slinkinput">New Link</p>
+           
+           <form class="linkinputs">    
+               <input id="linkname" name="linkname" type="text" placeholder="Name" /><span id="nevermind">x</span><br>
+               <input id="linkurl" name="linkurl" type="text" placeholder="URL" />
+               <button type="submit" id="submitlink">ADD</button>
+           </form>
+           </div>
         <div class="top-right"></div>
     </div>
     </div>
