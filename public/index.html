@@ -14,7 +14,7 @@
     <title>Momentum Dashboard</title>
 </head>
 
-<body>
+<body onload="startTime(),twelveTime()";>
 
     </div>
     <ul id="background" class="background"></ul>
@@ -32,7 +32,7 @@
 
     <div class="center">
         <div class="app-container clock">
-            <div class="default-clock"> </div>
+            <div id="default-clock"></div>
         </div>
         <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>, <span
                 class="name" spellcheck="false">Kyla</span>.
@@ -62,7 +62,7 @@
 
 
 
-    <script src="/js/clock.js"></script>
+    <script src="/public/js/clock.js"></script>
     <script src="/js/links.js"></script>
     <script src="/js/todo.js"></script>
 </body>
