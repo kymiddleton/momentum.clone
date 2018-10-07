@@ -50,7 +50,28 @@ body {
 }
 
 /* Clock */
+#default-clock{
+    font-size: 1000%;
+    color: white;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 67%;
+    left: 34%;
+    
+}
+#twclock{
+    font-size: 1000%;
+    color: white;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 20;
+    top: 67%;
+    left: 34%;
 
+}
 
 .greeting {
     display: block;
