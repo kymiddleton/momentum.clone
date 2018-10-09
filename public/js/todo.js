@@ -3,7 +3,6 @@
 function showtoDoList(){
     $('.bottom-right').toggleClass('show');
 }
-
     $('#todospan').on('click', showtoDoList);
 
 
@@ -170,3 +169,4 @@ $(function () {
 
     render();
 });
+
