@@ -50,41 +50,13 @@ body {
 }
 
 /* Clock */
-#default-clock{
-    font-size: 1000%;
-    color: white;
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    z-index: 15;
-    top: 67%;
-    left: 34%;
-    
-}
-#twclock{
-    font-size: 1000%;
-    color: white;
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    z-index: 20;
-    top: 67%;
-    left: 34%;
 
-}
 
 .greeting {
     display: block;
     font-size: 337.5%;
     letter-spacing: 0;
     white-space: nowrap;
-}
-
-.bottom-right {
-    position: relative;
-    display: none;
-    bottom: 10px;
-    left:1300px;
 }
 
 /* Center Below */
@@ -116,14 +88,17 @@ input {
 
 .bottom-right {
     position: relative;
-    margin-bottom: 25px;
+    display: none;
+    bottom: 10px;
+    left:1300px;
+
 }
 
  .app todo {
     position: absolute;
     padding: 0 15px;
     font-size: 25px;
-}
+ }
 
 /* Todo */
 #todo {
@@ -134,20 +109,15 @@ input {
 
 .icon {
     position: absolute;
-    padding-top: 100px;
 }
 
 .show {
     display: block;
 }
 
-
-/* Links */
-
 .hide {
     display: none;
 }
-
 
 .todo{
     background-color: rgb(10, 10, 10);
@@ -157,6 +127,10 @@ input {
     z-index: 3;
 }
 
+.form-control {
+    width: 100px;
+    height: 15px;
+}
 
 /* Media Stylesheet */
 
