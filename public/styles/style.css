@@ -107,6 +107,14 @@ body {
     display: none;
 
 }
+#dellink {
+    display: none;
+}
+
+
+#alllinks:hover #dellink {
+    display: inline;
+}
 
 .show {
     display: block;
