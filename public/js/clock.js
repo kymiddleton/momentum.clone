@@ -18,16 +18,17 @@ $(function() {
     };
 
     function base12Hour (hour, minute){
+        console.log("I'm running")
         if(hour > 12){
             hour = hour - 12;
-            minute = minute + " PM";
+            document.querySelector('#ampm').innerHTML =  " PM";
         }
         else if(hour < 12){
-            minute = minute + " AM";
+            document.getElementById('ampm').innerHTML = " AM";
 
         }
         else{
-            minute = minute + " PM";
+            document.getElementById('ampm').innerHTML =  " PM";
         }
         
         return [hour, minute];
@@ -41,14 +42,18 @@ $(function() {
         hour = appendZero(hour);
         minute = appendZero(minute);
 
+        console.log("I'm calling")
         var tempArray = base12Hour(hour, minute);
         hour = tempArray[0];
         minute = tempArray[1];
 
         document.getElementById('default-clock').innerHTML = hour + ":" + minute;
     };
-    
-    var toggle = false;
+    $('#default-clock').click(function(){
+        $('#ampm').toggleClass('remove');
+        $('#ampm').toggleClass('add');
+    });
+    toggle = false;
     $('#default-clock').click(function(e) {
         toggle = !toggle;
         if (toggle) {
@@ -57,4 +62,5 @@ $(function() {
             twelveTime();
         }
     });
+
 });
