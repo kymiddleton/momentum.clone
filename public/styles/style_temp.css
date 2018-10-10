@@ -10,13 +10,13 @@ body {
     opacity: 1;
 }
 
-#background {
+/* #background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
+} */
 
 .full {
     height: 100%;
@@ -30,6 +30,7 @@ body {
     right:25px;
     font-size: 20px;
 }
+
 .top-left {
     position: relative;
     flex: 1 0 auto;
@@ -44,42 +45,60 @@ body {
 /* Center */
 .center {
     display: block;
-    width: 100%;
     text-align: center;
-    padding-top: 45%;
+    width: 100%;
+    padding-top: 35%;
+}
+
+.center, .clock {
+    margin-top: -10px;
+    display: inline-block;
+    /* position: relative; */
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 /* Clock */
-<<<<<<< HEAD
 #default-clock{
+    position: absolute;
     font-size: 1000%;
     color: white;
-    position: absolute;
     width: 300px;
     height: 200px;
     z-index: 15;
+    top: 36%;
+    left: 23%;
+}
+
+#twclock{
+    position: absolute;
+    font-size: 1000%;
+    color: white;
+    width: 300px;
+    height: 200px;
+    z-index: 20;
     top: 67%;
     left: 34%;
-    
 }
-=======
-
->>>>>>> 5179a8fa1e083705f8c8042787e6118bbb13590d
 
 .greeting {
+    position: relative;
     display: block;
     font-size: 337.5%;
     letter-spacing: 0;
     white-space: nowrap;
 }
 
+
 /* Center Below */
 .center-below {
     display: block;
-    margin-top: 45px;
+    margin-top: 35px;
     text-align: center;
     font-size: 35px;
 }
+
 input {
     width: 600px;
     margin: 20px auto;
@@ -94,57 +113,78 @@ input {
 }
 
 /* Bottom */
-.bottom {
+/* .bottom {
     display: block;
     width: 100%;
     text-align: center;
-}
+} */
 
-.bottom-right {
+/* .bottom-right {
+    position: absolute;
+    margin-bottom: 25px;
+    text-align: right;
+} */
+
+/* .bottom-right {
     position: relative;
     display: none;
     bottom: 10px;
-    left:1300px;
+    left: 1300px;
+} */
 
-}
 
- .app todo {
-    position: absolute;
-    padding: 0 15px;
-    font-size: 25px;
- }
 
 /* Todo */
-#todo {
-    margin-left: 88%;
-    padding-top: 60px;
-    font-size: 20px;
-}
 
-.icon {
+/* .app todo {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 25px;
+} */
+
+/* #todo {
+    margin-left: 70%;
+    /* padding-top: 60px; */
+    /* font-size: 20px;
+} */
+
+/* .todo{
+    position: relative;
+    background-color: rgb(10, 10, 10);
+    opacity: .8;
+    height: 143px;
+    width: 316px;
+    z-index: 3;
+    right: 5px;
+    bottom: 10px;
+} */
+
+/* .icon {
     position: absolute;
-}
+    padding-top: 100px;
+} */
 
 .show {
     display: block;
 }
 
+
+/* Links */
+
 .hide {
     display: none;
 }
 
-.todo{
-    background-color: rgb(10, 10, 10);
-    opacity: .8;
-    height: 250px;
-    width: 200px;
-    z-index: 3;
-}
 
-.form-control {
-    width: 100px;
-    height: 15px;
-}
+
+
 
 /* Media Stylesheet */
+@media only screen and (min-width: 600px) {
+    body {
+        /* height: auto; */
+        width: auto;
+        object-fit: scale-down;
+    }
 
+}

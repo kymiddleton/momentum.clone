@@ -1,0 +1,257 @@
+body {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-image: url("../images/Island.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    opacity: 1;
+}
+
+/* Top */
+.top-row{
+    position: absolute;
+    top: 0;
+    left: 25px;
+    right: 25px;
+    font-size: 20px;
+}
+
+#quicklinks {
+    margin-top: 25px;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+
+/* Links */
+#inputbox {
+    background-color: rgb(10, 10, 10);
+    height: auto;
+    width: 200px;
+    opacity: 0.8;
+    color: white;
+    margin: 0px;
+    position: fixed;
+    left: 10px;
+    top: 75px;
+}
+#linkname {
+    background-color: rgb(10, 10, 10);
+    color: grey;
+    border: none;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: left;
+    font-size: 18px; 
+    padding-left: 10px;
+}
+#linkurl {
+    background-color: rgb(10, 10, 10);
+    color: grey;
+    border: none;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: left;
+    font-size: 18px; 
+    padding-left: 10px;
+}
+#newlinks {
+    padding-left: 10px;
+    color: grey;
+}
+#linkbutton {
+    color: white;
+    background-color: rgb(10, 10, 10);
+    border: none;
+    font-size: 20px;
+}
+.chromelink {
+    color: white;
+    background-color: rgb(10, 10, 10);
+    border: none;
+    font-size: 20px;  
+}
+.inputlink {
+    display: none;
+}
+.slinkinput {
+    padding: 5px;
+    color: white
+}   
+.linkinputs {
+    display: none;
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+#submitlink {
+    display: none;
+}
+
+/* Center */
+.center {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin-top: 30%;
+    padding-top: 70%;
+    /* left: 28%; */
+    left: 19%;
+    transform: translate(-50%, -50%);
+}
+
+.app-container {
+    width: 100%;
+}
+
+/* Clock */
+#default-clock{
+    position: relative;
+    font-size: 900%;
+    color: white;
+    /* width: 300px; */
+    /* height: 200px; */
+    z-index: 15;
+    top: 36%;
+    left: 32%;
+}
+
+#twclock{
+    position: absolute;
+    font-size: 900%;
+    color: white;
+    /* width: 300px; */
+    /* height: 200px; */
+    z-index: 20;
+    top: 36%;
+    left: 32%;
+}
+
+.greeting {
+    position: relative;
+    /* display: block; */
+    font-size: 290.5%;
+    /* letter-spacing: 0; */
+    white-space: nowrap;
+    left: 31%;
+}
+
+
+
+/* Center Below */
+.center-below {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 35px;
+}
+
+h3 {
+    position: relative;
+    font-size: 75.5%;
+    white-space: nowrap;
+    left: 31%;
+}
+
+input {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+    padding-top: 25px;
+    background: 0;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    outline: 0;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+
+/* Bottom */
+
+
+
+/* Todo */
+
+
+
+
+
+
+
+/* Media Stylesheet */
+@media only screen and (min-width: 600px) {
+    body {
+        width: auto;
+        object-fit: scale-down;
+    }
+    
+    .center {
+        width: auto;
+        padding-top: 30%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+    } 
+
+    #default-clock{
+        font-size: 1400%;
+        width: 300px;
+        height: 200px;
+        top: 35%;
+        left: 50%;
+    }
+
+    #twclock{
+        font-size: 1400%;
+        width: 300px;
+        height: 200px;
+        z-index: 20;
+        top: 35%;
+        left: 50%;
+    }
+
+    .greeting {
+        text-align: center;
+        /* position: relative; */
+        /* display: block; */
+        font-size: 500.5%;
+        /* letter-spacing: 0; */
+        /* white-space: nowrap; */
+        left: 19%;
+    }
+
+    h3 {
+        position: relative;
+        font-size: 280.5%;
+        white-space: nowrap;
+        left: 31%;
+    }
+
+    input {
+        position: relative;
+        /* font-size: 280.5%; */
+        width: 600px;
+        margin: 20px auto;
+        padding-top: 25px;
+        /* background: 0; */
+        /* border: 0; */
+        /* border-bottom: 2px solid #fff; */
+        /* color: #fff; */
+        /* outline: 0; */
+        /* text-align: center; */
+        /* margin-bottom: 0px; */
+    }
+
+
+}
