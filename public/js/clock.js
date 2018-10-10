@@ -1,50 +1,60 @@
-// A moving clock set to EST
-//W3 Tools clock for public use, Most of them start off like this
+$(function() {
+    startTime();
 
-
-var count = 0;
-$('default-clock').click(function() {
-    count++;
-    var isEven = function(someNumber) {
-        return (someNumber % 2 === 0) ? true : false;
+    function  appendZero (input) {
+        if (input < 10) {input = "0" + input};  
+        return input;
     };
-    if (isEven(count) === false) {
-        $(this).startTime()
-    } else if (isEven(count) === true) {
-        $(this).twelveTime()
-    }
-});
 
-
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    m = checkTime(m);
+    function startTime() {
+        var today = new Date();
+        var hour = today.getHours();
+        var minute = today.getMinutes();
     
-    document.getElementById('default-clock').innerHTML = h + ":" + m;
-    const t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  
-    return i;
-};
+        hour = appendZero(hour);
+        minute = appendZero(minute);
+        
+        document.getElementById('default-clock').innerHTML = hour + ":" + minute;
+    };
 
-function twelveTime(){
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    m = checkTime(m);
-    h = twelve_hour_time(h);
-    document.getElementById('default-clock').innerHTML = h + ":" + m;
-    const t = setTimeout(startTime, 500);
-}
+    function base12Hour (hour, minute){
+        if(hour > 12){
+            hour = hour - 12;
+            minute = minute + " PM";
+        }
+        else if(hour < 12){
+            minute = minute + " AM";
 
-function twelve_hour_time(h){
+        }
+        else{
+            minute = minute + " PM";
+        }
+        
+        return [hour, minute];
+    };
 
-    if(h > 12){
-        h = h - 12;
-        AM_or_PM = " PM";
-    }
-    return h;
-};
+    function twelveTime (){
+        var today = new Date();
+        var hour = today.getHours();
+        var minute = today.getMinutes();
+
+        hour = appendZero(hour);
+        minute = appendZero(minute);
+
+        var tempArray = base12Hour(hour, minute);
+        hour = tempArray[0];
+        minute = tempArray[1];
+
+        document.getElementById('default-clock').innerHTML = hour + ":" + minute;
+    };
+    
+    var toggle = false;
+    $('#default-clock').click(function(e) {
+        toggle = !toggle;
+        if (toggle) {
+            startTime();
+        } else {
+            twelveTime();
+        }
+    });
+});
