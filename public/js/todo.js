@@ -6,9 +6,10 @@ function showtoDoList(){
     $('#todospan').on('click', showtoDoList);
 
 
+    
 $(function () {
     const state = {
-        toDoList: [],
+        todo: [],
     };
 
     const render = function () {
@@ -16,16 +17,16 @@ $(function () {
         runToDoQuery();
     }
 
-    const renderToDo = function (outputElement, toDoList, _id) {
+    const renderToDo = function (outputElement, todo, _id) {
         const output = $(outputElement);
 
         const toDoListElement = $('<div>').addClass('toDo');
 
         const label = $('<label>').addClass('check-marker');
         const checkbox = $('<input type="checkbox">')
-            .attr('checked', toDoList.completed)
+            .attr('checked', todo.todoStatus)
             .addClass('completed')
-            .attr('data-id', toDoList._id);
+            .attr('data-id', todo._id);
 
 
         label.append(checkbox);
@@ -33,16 +34,20 @@ $(function () {
         label.append('<i class="far fa-square unchecked">');
 
 
-        const elem = $('<span>').text(toDoList.thingToDo).addClass('textDisplay');
+        const elem = $('<span>').text(todo.todoItem).addClass('textDisplay');
 
         const elem2 = $('<button><i class="fas fa-ellipsis-h"></i></button>')
             .addClass('delete')
-            .attr('data-id', toDoList._id)
+            .attr('data-id', todo._id)
             .append('<i>')
         console.log(elem);
         toDoListElement.append(label, elem, elem2)
         output.append(toDoListElement);
     }
+
+    
+    
+  
 
     //   $('#options').on('click', function (event) {
     //     event.preventDefault();
@@ -53,28 +58,29 @@ $(function () {
     //   });
 
 
-    const renderToDos = function (outputElement, toDoList) {
+    const renderToDos = function (outputElement, todo) {
         const output = $(outputElement);
         output.empty();
-        toDoList.forEach((todo) => renderToDo(outputElement, todo));
+        todo.forEach((todo) => renderToDo(outputElement, todo));
     }
 
     const runToDoQuery = function () {
 
-        $.ajax({ url: "/api/toDoSchema", method: "GET" })
-            .then(function (toDoList) {
-                state.toDoList = toDoList
-                renderToDos('#content', toDoList);
+        $.ajax({ url: "/api/todoLog", method: "GET" })
+            .then(function (todo) {
+                state.todo = todo
+                renderToDos('#content', todo);
             });
     }
 
+    
 
     $('.submit').on('click', function (event) {
         event.preventDefault();
 
         const newToDo = {
-            thingToDo: $('#toDoInput').val().trim(),
-            completed: false,
+            todoItem: $('#toDoInput').val().trim(),
+            todoStatus: false,
 
         };
 
@@ -85,7 +91,7 @@ $(function () {
             }
         }
 
-        $.ajax({ url: '/api/toDoSchema', method: 'POST', data: newToDo }).then(
+        $.ajax({ url: '/api/todoLog', method: 'POST', data: newToDo }).then(
             function (data) {
 
                 if (data.success) {
@@ -97,7 +103,7 @@ $(function () {
             })
 
         $.ajax({
-            url: '/api/toDoSchema',
+            url: '/api/todoLog',
             method: 'POST',
             data: newToDo
         }).then(
@@ -122,12 +128,12 @@ $(function () {
         const completed = event.target.checked;
 
 
-        const toDoUpdate = state.toDoList[Number(thisId)];
+        const toDoUpdate = state.todo[Number(thisId)];
 
         toDoUpdate.completed = completed;
 
         $.ajax({
-            url: `/api/toDoSchema/${thisId}`,
+            url: `/api/todoLog/${thisId}`,
             method: 'PUT',
             data: toDoUpdate
         })
@@ -147,11 +153,11 @@ $(function () {
     $('body').on('click', '.delete', function (event) {
         const todoID = $(this).attr('data-id');
 
-        console.log(state.toDoList[Number(todoID)])
+        console.log(state.todo[Number(todoID)])
 
 
         $.ajax({
-            url: `/api/toDoSchema/${todoID}`,
+            url: `/api/todoLog/${todoID}`,
             method: 'DELETE'
         })
             .then(function (data) {

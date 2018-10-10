@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <title>Momentum Dashboard</title>
 </head>
 
-<body onload="startTime(),twelveTime()";>
+<body onload="startTime(),twelveTime()" ;>
 
     </div>
     <ul id="background" class="background"></ul>
@@ -26,6 +26,20 @@
             <div class="top-left"></div>
             <div id="quicklinks"></div><span>Links</span>
         </div>
+
+        <div id="inputbox" class="inputlink">
+            <p class="slinkinput"><a href="https://www.google.com"><button type="submit" class="chromelink">Chrome Tab</button></a></p>
+            <p class="slinkinput"><a href="chrome://apps/"><button type="submit" class="chromelink">Apps</button></a></p>
+            <div id="savedlinks" class="slinkinput"></div>
+            <p id="newlinks" class="slinkinput">New Link</p>
+
+            <form class="linkinputs">
+                <input id="linkname" name="linkname" type="text" placeholder="Name" /><span id="nevermind">x</span><br>
+                <input id="linkurl" name="linkurl" type="text" placeholder="URL" />
+                <button type="submit" id="submitlink">ADD</button>
+            </form>
+        </div>
+
         <div class="top-right"></div>
     </div>
     </div>
@@ -34,8 +48,8 @@
         <div class="app-container clock">
             <div id="default-clock"></div>
         </div>
-        <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>, <span
-                class="name" spellcheck="false">Kyla</span>.
+        <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>, <span class="name"
+                spellcheck="false">Kyla</span>.
         </div>
     </div>
 
@@ -50,19 +64,21 @@
     </div>
     <div class="bottom">
         <div class="bottom-left" id="bottom-left"></div>
-        <div class="bottom-right todo" id = "todoright">
-                <input type="text" class="form-control" id="toDoInput" placeholder="Add a to do">
-            <div id = "content">
-                    
-            </div>
+        <div class="bottom-right todo" id="todoright">
+                <div id="content">
+
+                    </div>
+            <input type="text" class="form-control" id="toDoInput" placeholder="Add a to do">
+            <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
+            
         </div>
-        <div id="todo" class="app"><span class = "to do icon" id = "todospan">ToDo</span></div>
+        <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
     </div>
 
 
 
 
-    <script src="../public/js/clock.js"></script>
+    <script src="./js/clock.js"></script>
     <script src="/js/links.js"></script>
     <script src="/js/todo.js"></script>
 </body>

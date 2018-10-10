@@ -132,5 +132,13 @@ input {
     height: 15px;
 }
 
+.fa-square {
+position: relative;
+left:100px;
+}
+.fa-check-square {
+    position: relative;
+left:100px;
+}
 /* Media Stylesheet */
 
