@@ -25,7 +25,9 @@
         <div class="full"></div>
         <div class="top-row">
             <div class="top-left"></div>
+
              <div id="quicklinks"></div><span id="favlinks">Links</span>
+
         </div>
 
         <div id="inputbox" class="inputlink">
@@ -48,12 +50,9 @@
 
     <div class="center">
         <div class="app-container clock">
-            <div id="default-clock"></div>
+            <div id="default-clock" ></div><div class="remove" id="ampm"></div>
         </div>
-
-        <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>, <span class="name"
-                spellcheck="false">Kyla</span>.
-
+      
         <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>,
             <span class="name" spellcheck="false">CJ</span>.
 
@@ -71,8 +70,10 @@
    
     <div class="bottom">
 
-        <div class="bottom-left" id="bottom-left"></div>
-        <div class="bottom-right todo" id="todoright">
+            <div class="app-container quote">
+                <div class="bottom-left" id="bottom-left"></div>
+                
+              <div class="bottom-right todo" id="todoright">
                 <div id="content">
 
                     </div>
@@ -82,19 +83,6 @@
         </div>
         <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
 
-
-        <div class="app-container quote">
-            <div class="bottom-left" id="bottom-left"></div>
-
-            <div class="bottom-right todo" id="todoright">
-                <input type="text" class="form-control" id="toDoInput" placeholder="Add a to do">
-                <div id="content">
-
-                </div>
-            </div>
-            <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
-        </div>
-
     </div>
 
 
@@ -102,7 +90,6 @@
     <script src="./js/clock.js"></script>
     <script src="./js/links.js"></script>
     <script src="./js/todo.js"></script>
-
 
 </body>
 

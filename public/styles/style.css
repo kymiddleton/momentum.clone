@@ -9,7 +9,12 @@ body {
     background-color: transparent;
     opacity: 1;
 }
-
+.add{
+    display: block;
+}
+.remove{
+    display:none;
+}
 #background {
     position: absolute;
     top: 0;
@@ -147,9 +152,17 @@ body {
     z-index: 15;
     top: 67%;
     left: 34%;
+    display: inline-block;
     
 }
+#ampm{
+    font-size: 22px;
+    display: inline-block;
+    position: absolute;
+    top: 85%;
+    left:60%;
 
+}
 .greeting {
     display: block;
     font-size: 337.5%;
