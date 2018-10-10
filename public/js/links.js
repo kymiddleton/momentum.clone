@@ -79,14 +79,14 @@ $( function(){
         const linkID = $(this).data('id');
         $.ajax({url: `/api/linksLog/${linkID}`, method: 'DELETE'})
         .then(function(data) {
-            console.log(data.success);
+            // console.log(data.success);
     
-            if (data.success) {
+            // if (data.success) {
                 runLinksQuery();
-            } else {
+            // } else {
     
-                alert('Cannot delete');
-            }
+            //     alert('Cannot delete');
+            // }
         });
         });
     

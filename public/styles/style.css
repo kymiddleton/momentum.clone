@@ -100,6 +100,10 @@ body {
        padding: 5px;
        color: white
    } 
+#dellink {
+    display: none;
+}
+
 
     
 .linkinputs {
@@ -116,6 +120,9 @@ body {
 
 #submitlink {
     display: none;
+}
+#linkbutton:hover + #dellink {
+    display: block;
 }
 
 /* Center */
