@@ -1,10 +1,16 @@
 // Easy access to favorite links
+
+
+
+
 $( function(){
+
+
     const renderLinks = function (links) {   
         $('#savedlinks').empty();
-        links.forEach(e => render(`<div id="alllinks"><a href="http://${e.url}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><span>x</span></div>`));
-      
-         };
+        links.forEach(e => render(`<div id="alllinks"><a id="hovlink" href="http://${e.url}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><button type="submit" id="dellink" data-id=${e._id}>x</button></div>`));
+        };
+    
     
     const render = function (links) {
         $('#savedlinks').append(links);
@@ -12,7 +18,6 @@ $( function(){
     
           const runLinksQuery = function () {
     
-            // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
             $.ajax({ url: '/api/linksLog', method: 'GET' })
               .then(function(links) {
                   renderLinks(links);
@@ -46,7 +51,6 @@ $( function(){
     $('#submitlink').on('click', function (event) {
         event.preventDefault();
     
-        // Here we grab the form elements
         const newLink = {
             linkName: $('#linkname').val().trim(),
             url: $('#linkurl').val().trim(),
@@ -69,5 +73,29 @@ $( function(){
             });
             runLinksQuery();
     });
-        
+    
+    $('#savedlinks').on('click', '#dellink', function (event) {
+        console.log($(this).data('id'));
+        const linkID = $(this).data('id');
+        $.ajax({url: `/api/linksLog/${linkID}`, method: 'DELETE'})
+        .then(function(data) {
+            // console.log(data.success);
+    
+            // if (data.success) {
+                runLinksQuery();
+            // } else {
+    
+            //     alert('Cannot delete');
+            // }
+        });
+        });
+    
+        // const adddel = function () {
+        //     addClass('#dellink', 'show');
+        // };
+
+        // on('#alllinks', 'mouseenter', adddel);
+
+       
+
     });
