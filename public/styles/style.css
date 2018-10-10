@@ -9,7 +9,12 @@ body {
     background-color: transparent;
     opacity: 1;
 }
-
+.add{
+    display: block;
+}
+.remove{
+    display:none;
+}
 #background {
     position: absolute;
     top: 0;
@@ -39,6 +44,93 @@ body {
     margin-top: 25px;
 }
 /* Links */
+#inputbox {
+    background-color: rgb(10, 10, 10);
+    height: auto;
+    width: 200px;
+    opacity: 0.8;
+    color: white;
+    margin: 0px;
+    position: fixed;
+    left: 10px;
+    top: 75px;
+}
+
+#linkname {
+    background-color: rgb(10, 10, 10);
+    color: grey;
+    border: none;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: left;
+    font-size: 18px; 
+    padding-left: 10px;
+}
+
+   #linkurl {
+        background-color: rgb(10, 10, 10);
+        color: grey;
+        border: none;
+        width: 150px;
+        margin: 0px;
+        padding: 0px;
+        height: 20px;
+        text-align: left;
+        font-size: 18px; 
+        padding-left: 10px;
+        }
+
+    #newlinks {
+        padding-left: 10px;
+        color: grey;
+    }
+   #linkbutton {
+       color: white;
+       background-color: rgb(10, 10, 10);
+       border: none;
+       font-size: 20px;
+   }
+   .chromelink {
+    color: white;
+    background-color: rgb(10, 10, 10);
+    border: none;
+    font-size: 20px;  
+   }
+     .inputlink {
+        display: none;
+    }
+   .slinkinput {
+       padding: 5px;
+       color: white
+   } 
+
+
+    
+.linkinputs {
+    display: none;
+
+}
+#dellink {
+    display: none;
+}
+
+
+#alllinks:hover #dellink {
+    display: inline;
+}
+
+.show {
+    display: block;
+}
+.hide {
+    display:  none;
+}
+
+#submitlink {
+    display: none;
+}
 
 
 /* Center */
@@ -60,7 +152,14 @@ body {
     top: 67%;
     left: 34%;
 }
+#ampm{
+    font-size: 22px;
+    display: inline-block;
+    position: absolute;
+    top: 85%;
+    left:60%;
 
+}
 .greeting {
     display: block;
     font-size: 337.5%;
@@ -140,5 +239,13 @@ input {
     height: 15px;
 }
 
+.fa-square {
+position: relative;
+left:100px;
+}
+.fa-check-square {
+    position: relative;
+left:100px;
+}
 /* Media Stylesheet */
 
