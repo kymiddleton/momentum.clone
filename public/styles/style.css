@@ -50,7 +50,6 @@ body {
 }
 
 /* Clock */
-<<<<<<< HEAD
 #default-clock{
     font-size: 1000%;
     color: white;
@@ -62,9 +61,6 @@ body {
     left: 34%;
     
 }
-=======
-
->>>>>>> 5179a8fa1e083705f8c8042787e6118bbb13590d
 
 .greeting {
     display: block;
