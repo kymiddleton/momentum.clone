@@ -1,6 +1,12 @@
 //A todo list with ability to add, update, and delete 
-$(function () {
 
+function showtoDoList(){
+    $('.bottom-right').toggleClass('show');
+}
+    $('#todospan').on('click', showtoDoList);
+
+
+$(function () {
     const state = {
         toDoList: [],
     };
@@ -44,8 +50,8 @@ $(function () {
     // const div = $('<div>').addClass('option box label');
 
     // div.append('<div>"Edit"</div>')
-
     //   });
+
 
     const renderToDos = function (outputElement, toDoList) {
         const output = $(outputElement);
