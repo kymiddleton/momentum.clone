@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <title>Momentum Dashboard</title>
 </head>
+
 
 <body>
 
@@ -26,7 +27,7 @@
             <div class="top-left"></div>
              <div id="quicklinks"></div><span id="favlinks">Links</span>
         </div>
-        
+
         <div id="inputbox" class="inputlink">
             <p class="slinkinput"><a href="https://www.google.com"><button type="submit" class="chromelink">Chrome Tab</button></a></p>
             <p class="slinkinput"><a href="chrome://apps/"><button type="submit" class="chromelink">Apps</button></a></p>
@@ -39,7 +40,7 @@
                 <button type="submit" id="submitlink">ADD</button>
             </form>
         </div>
-        
+
         <div class="top-right"></div>
         <div id="weather" class="app-container weather">
         </div>
@@ -49,8 +50,13 @@
         <div class="app-container clock">
             <div id="default-clock"></div>
         </div>
+
+        <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>, <span class="name"
+                spellcheck="false">Kyla</span>.
+
         <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>,
             <span class="name" spellcheck="false">CJ</span>.
+
         </div>
     </div>
 
@@ -65,6 +71,18 @@
    
     <div class="bottom">
 
+        <div class="bottom-left" id="bottom-left"></div>
+        <div class="bottom-right todo" id="todoright">
+                <div id="content">
+
+                    </div>
+            <input type="text" class="form-control" id="toDoInput" placeholder="Add a to do">
+            <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
+            
+        </div>
+        <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
+
+
         <div class="app-container quote">
             <div class="bottom-left" id="bottom-left"></div>
 
@@ -76,6 +94,7 @@
             </div>
             <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
         </div>
+
     </div>
 
 
@@ -83,6 +102,7 @@
     <script src="./js/clock.js"></script>
     <script src="./js/links.js"></script>
     <script src="./js/todo.js"></script>
+
 
 </body>
 
