@@ -10,11 +10,11 @@ module.exports = function (app) {
         db.todo.find({})
             .then(function (dbtodo) {
                 console.log(dbtodo)
-                res.json({ success: true });
+                res.json(dbtodo);
             })
             .catch(function (err) {
-                conso
-                res.json({ success: true });
+                console.log(err)
+                res.json(err);
             });
     });
 

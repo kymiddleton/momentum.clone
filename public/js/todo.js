@@ -1,7 +1,7 @@
 //A todo list with ability to add, update, and delete 
 
 function showtoDoList(){
-    $('.bottom-right').toggleClass('show');
+    $('.bottom-right').toggleClass('visible');
 }
     $('#todospan').on('click', showtoDoList);
 
@@ -24,7 +24,7 @@ $(function () {
 
         const label = $('<label>').addClass('check-marker');
         const checkbox = $('<input type="checkbox">')
-            .attr('checked', todo.todoStatus)
+            .attr('checked', todo.todoStatus.completed)
             .addClass('completed')
             .attr('data-id', todo._id);
 
@@ -91,16 +91,7 @@ $(function () {
             }
         }
 
-        $.ajax({ url: '/api/todoLog', method: 'POST', data: newToDo }).then(
-            function (data) {
-
-                if (data.success) {
-
-                    console.log('data', data)
-                    $('#content').val('');
-                    $('#content').focus();
-                }
-            })
+   
 
         $.ajax({
             url: '/api/todoLog',
@@ -111,8 +102,8 @@ $(function () {
                 if (data.success) {
 
                     console.log('data', data)
-                    $('#toDoInput').val('');
-                    $('#toDoInput').focus();
+                    $('#content').val('');
+                    $('#content').focus();
 
                     render();
                 } else {
