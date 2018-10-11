@@ -9,12 +9,15 @@ body {
     background-color: transparent;
     opacity: 1;
 }
-.add{
+
+.add {
     display: block;
 }
-.remove{
+
+.remove {
     display:none;
 }
+
 #background {
     position: absolute;
     top: 0;
@@ -28,13 +31,14 @@ body {
 }
 
 /* Top */
-.top-row{
+.top-row {
     position:absolute;
     top:0;
     left:25px;
     right:25px;
     font-size: 20px;
 }
+
 .top-left {
     position: relative;
     flex: 1 0 auto;
@@ -43,6 +47,7 @@ body {
 #quicklinks {
     margin-top: 25px;
 }
+
 /* Links */
 #inputbox {
     background-color: rgb(10, 10, 10);
@@ -69,53 +74,54 @@ body {
     padding-left: 10px;
 }
 
-   #linkurl {
-        background-color: rgb(10, 10, 10);
-        color: grey;
-        border: none;
-        width: 150px;
-        margin: 0px;
-        padding: 0px;
-        height: 20px;
-        text-align: left;
-        font-size: 18px; 
-        padding-left: 10px;
-        }
+#linkurl {
+    background-color: rgb(10, 10, 10);
+    color: grey;
+    border: none;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: left;
+    font-size: 18px; 
+    padding-left: 10px;
+}
 
-    #newlinks {
-        padding-left: 10px;
-        color: grey;
-    }
-   #linkbutton {
-       color: white;
-       background-color: rgb(10, 10, 10);
-       border: none;
-       font-size: 20px;
-   }
-   .chromelink {
+#newlinks {
+    padding-left: 10px;
+    color: grey;
+}
+
+#linkbutton {
+    color: white;
+    background-color: rgb(10, 10, 10);
+    border: none;
+    font-size: 20px;
+}
+
+.chromelink {
     color: white;
     background-color: rgb(10, 10, 10);
     border: none;
     font-size: 20px;  
-   }
-     .inputlink {
-        display: none;
-    }
-   .slinkinput {
-       padding: 5px;
-       color: white
-   } 
+}
 
+.inputlink {
+    display: none;
+}
 
-    
+.slinkinput {
+    padding: 5px;
+    color: white
+} 
+
 .linkinputs {
     display: none;
-
 }
+
 #dellink {
     display: none;
 }
-
 
 #alllinks:hover #dellink {
     display: inline;
@@ -124,6 +130,7 @@ body {
 .show {
     display: block;
 }
+
 .hide {
     display:  none;
 }
@@ -131,7 +138,6 @@ body {
 #submitlink {
     display: none;
 }
-
 
 /* Center */
 .center {
@@ -142,7 +148,7 @@ body {
 }
 
 /* Clock */
-#default-clock{
+#default-clock {
     font-size: 1000%;
     color: white;
     position: absolute;
@@ -152,14 +158,15 @@ body {
     top: 67%;
     left: 34%;
 }
-#ampm{
+
+#ampm {
     font-size: 22px;
     display: inline-block;
     position: absolute;
     top: 85%;
     left:60%;
-
 }
+
 .greeting {
     display: block;
     font-size: 337.5%;
@@ -174,6 +181,7 @@ body {
     text-align: center;
     font-size: 35px;
 }
+
 input {
     width: 600px;
     margin: 20px auto;
@@ -196,10 +204,9 @@ input {
 
 .bottom-right {
     position: relative;
-  visibility: hidden;
+    visibility: hidden;
     bottom: 10px;
     left:1160px;
-
 }
 
 .app todo {
@@ -217,7 +224,6 @@ input {
 
 .icon {
     position: absolute;
-   
 }
 
 .show {
@@ -233,7 +239,7 @@ input {
     visibility: visible;
 }
 
-.todo{
+.todo {
     background-color: rgb(10, 10, 10);
     grid-template-rows: auto 30px;
     opacity: .8;
@@ -241,9 +247,9 @@ input {
     width: 320px;
     z-index: 3;
     position: absolute;
-   margin-top: 400px;
-margin-bottom: -190px;
-margin-right: -400px;
+    margin-top: 400px;
+    margin-bottom: -190px;
+    margin-right: -400px;
 }
 
 .todoheader {
@@ -266,14 +272,14 @@ margin-right: -400px;
 }
 
 .todogreeting {
-padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
-.newtodo{
+.newtodo {
     margin-top:20px;
-border-radius: 20%/50%;
-height: 30px;
-margin-bottom: 20px;
+    border-radius: 20%/50%;
+    height: 30px;
+    margin-bottom: 20px;
 }
 
 .form-control {
@@ -282,12 +288,12 @@ margin-bottom: 20px;
 }
 
 .fa-square {
-position: relative;
-left:100px;
+    position: relative;
+    left:100px;
 }
 .fa-check-square {
     position: relative;
-left:100px;
+    left:100px;
 }
 .completed,
 .fancy-checkbox {
