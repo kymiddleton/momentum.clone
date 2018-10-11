@@ -196,9 +196,10 @@ input {
 
 .bottom-right {
     position: relative;
-    display: none;
+  visibility: hidden;
     bottom: 10px;
-    left:1300px;
+    left:1160px;
+
 }
 
 .app todo {
@@ -216,6 +217,7 @@ input {
 
 .icon {
     position: absolute;
+   
 }
 
 .show {
@@ -226,12 +228,52 @@ input {
     display: none;
 }
 
+.visible {
+    display: block;
+    visibility: visible;
+}
+
 .todo{
     background-color: rgb(10, 10, 10);
+    grid-template-rows: auto 30px;
     opacity: .8;
-    height: 250px;
-    width: 200px;
+    height: auto;
+    width: 320px;
     z-index: 3;
+    position: absolute;
+   margin-top: 400px;
+margin-bottom: -190px;
+margin-right: -400px;
+}
+
+.todoheader {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-bottom: 30px;
+}
+
+.todoheaderleft {
+    padding-top: 5px;
+   position: relative;
+   right: 17%;
+}
+
+.todoheaderright {
+    padding-top: 5px;
+    position: relative;
+    left: 17%;
+}
+
+.todogreeting {
+padding-bottom: 20px;
+}
+
+.newtodo{
+    margin-top:20px;
+border-radius: 20%/50%;
+height: 30px;
+margin-bottom: 20px;
 }
 
 .form-control {
@@ -247,5 +289,24 @@ left:100px;
     position: relative;
 left:100px;
 }
+.completed,
+.fancy-checkbox {
+    color: black;
+    cursor: pointer;
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked~.checked {
+    display: inline-block;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked~.unchecked {
+    display: none;
+}
+
 /* Media Stylesheet */
 
