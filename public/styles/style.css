@@ -10,7 +10,6 @@ body {
     background-color: transparent;
     opacity: 1;
 }
-
 #background {
     position: absolute;
     top: 0;
@@ -18,12 +17,10 @@ body {
     right: 0;
     bottom: 0;
 }
-
 /* Top */
 .full {
     height: 100%;
 }
-
 .top-row {
     position:absolute;
     top:0;
@@ -31,16 +28,13 @@ body {
     right:25px;
     font-size: 20px;
 }
-
 .top-left {
     position: relative;
     flex: 1 0 auto;
 }
-
 #quicklinks {
     margin-top: 25px;
 }
-
 /* Links */
 #inputbox {
     background-color: rgb(10, 10, 10);
@@ -53,7 +47,6 @@ body {
     left: 10px;
     top: 75px;
 }
-
 #linkname {
     background-color: rgb(10, 10, 10);
     color: grey;
@@ -66,7 +59,6 @@ body {
     font-size: 18px; 
     padding-left: 10px;
 }
-
 #linkurl {
     background-color: rgb(10, 10, 10);
     color: grey;
@@ -79,59 +71,47 @@ body {
     font-size: 18px; 
     padding-left: 10px;
 }
-
 #newlinks {
     padding-left: 10px;
     color: grey;
 }
-
 #linkbutton {
     color: white;
     background-color: rgb(10, 10, 10);
     border: none;
     font-size: 20px;
 }
-
 .chromelink {
     color: white;
     background-color: rgb(10, 10, 10);
     border: none;
     font-size: 20px;  
 }
-
 .inputlink {
     display: none;
 }
-
 .slinkinput {
     padding: 5px;
     color: white
 } 
-
 .linkinputs {
     display: none;
 }
-
 #dellink {
     display: none;
 }
-
 #alllinks:hover #dellink {
     display: inline;
 }
-
 .show {
     display: block;
 }
-
 .hide {
     display:  none;
 }
-
 #submitlink {
     display: none;
 }
-
 /* Center */
 .center {
     display: grid;
@@ -140,16 +120,13 @@ body {
     text-align: center;
     padding-top: 20%;
 }
-
 /* Clock */
 .add {
     display: block;
 }
-
 .remove {
     display:none;
 }
-
 #default-clock {
     font-size: 800%;
     color: white;
@@ -160,7 +137,6 @@ body {
     /* top: 35%;
     left: 32%; */
 }
-
 #ampm {
     font-size: 22px;
     display: inline-block;
@@ -168,14 +144,12 @@ body {
     top: 85%;
     left:60%; */
 }
-
 .greeting {
     display: block;
     font-size: 40px;
     letter-spacing: 0;
     white-space: nowrap;
 }
-
 /* Center Below */
 .center-below {
     display: block;
@@ -183,7 +157,6 @@ body {
     text-align: center;
     font-size: 40px;
 }
-
 #focus {
     width: 300px;
     margin: 20px auto;
@@ -195,40 +168,26 @@ body {
     text-align: center;
     margin-bottom: 0px;
 }
-
 /* Bottom */
-
-
 /* Todo */
-
-
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
-
     body {
-
     }
-
     .top-row {
         font-size: 15px;
     }
-
     #default-clock {
         font-size: 800%;
     }
-
     .greeting {
         font-size: 25px;
         white-space: nowrap;
     }
-
     .center-below {
         font-size: 25px;
     }
-
     /* #focus {
         width: 600px;
     } */
-
 }
-

@@ -40,9 +40,9 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes link content
-    app.delete('/api/linksLog', function (req, res) {  //works!
+    app.delete('/api/linksLog/:link_id', function (req, res) {  //works!
         console.log('--------deleting--------');
-        db.links.findByIdAndRemove(req.body.id, function (err, links) {
+        db.links.findByIdAndRemove(req.params.link_id, function (err, links) {
             if (err) return res.status(500).send(err);
             // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {
