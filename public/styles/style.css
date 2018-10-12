@@ -10,6 +10,7 @@ body {
     background-color: transparent;
     opacity: 1;
 }
+
 #background {
     position: absolute;
     top: 0;
@@ -17,10 +18,12 @@ body {
     right: 0;
     bottom: 0;
 }
+
 /* Top */
 .full {
     height: 100%;
 }
+
 .top-row {
     position:absolute;
     top:0;
@@ -28,13 +31,16 @@ body {
     right:25px;
     font-size: 20px;
 }
+
 .top-left {
     position: relative;
     flex: 1 0 auto;
 }
+
 #quicklinks {
     margin-top: 25px;
 }
+
 /* Links */
 #inputbox {
     background-color: rgb(10, 10, 10);
@@ -47,6 +53,7 @@ body {
     left: 10px;
     top: 75px;
 }
+
 #linkname {
     background-color: rgb(10, 10, 10);
     color: grey;
@@ -59,6 +66,7 @@ body {
     font-size: 18px; 
     padding-left: 10px;
 }
+
 #linkurl {
     background-color: rgb(10, 10, 10);
     color: grey;
@@ -71,47 +79,59 @@ body {
     font-size: 18px; 
     padding-left: 10px;
 }
+
 #newlinks {
     padding-left: 10px;
     color: grey;
 }
+
 #linkbutton {
     color: white;
     background-color: rgb(10, 10, 10);
     border: none;
     font-size: 20px;
 }
+
 .chromelink {
     color: white;
     background-color: rgb(10, 10, 10);
     border: none;
     font-size: 20px;  
 }
+
 .inputlink {
     display: none;
 }
+
 .slinkinput {
     padding: 5px;
     color: white
 } 
+
 .linkinputs {
     display: none;
 }
+
 #dellink {
     display: none;
 }
+
 #alllinks:hover #dellink {
     display: inline;
 }
+
 .show {
     display: block;
 }
+
 .hide {
     display:  none;
 }
+
 #submitlink {
     display: none;
 }
+
 /* Center */
 .center {
     display: grid;
@@ -120,13 +140,16 @@ body {
     text-align: center;
     padding-top: 20%;
 }
+
 /* Clock */
 .add {
     display: block;
 }
+
 .remove {
     display:none;
 }
+
 #default-clock {
     font-size: 800%;
     color: white;
@@ -137,6 +160,7 @@ body {
     /* top: 35%;
     left: 32%; */
 }
+
 #ampm {
     font-size: 22px;
     display: inline-block;
@@ -144,12 +168,14 @@ body {
     top: 85%;
     left:60%; */
 }
+
 .greeting {
     display: block;
     font-size: 40px;
     letter-spacing: 0;
     white-space: nowrap;
 }
+
 /* Center Below */
 .center-below {
     display: block;
@@ -157,6 +183,7 @@ body {
     text-align: center;
     font-size: 40px;
 }
+
 #focus {
     width: 300px;
     margin: 20px auto;
@@ -168,25 +195,188 @@ body {
     text-align: center;
     margin-bottom: 0px;
 }
+
 /* Bottom */
 /* Todo */
+#todo {
+    margin-left: 88%;
+    padding-top: 60px;
+    font-size: 20px;
+}
+
+.icon {
+    position: absolute;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.visible {
+    visibility: visible;
+}
+.invisible {
+    visibility: hidden;
+}
+
+.newtodo {
+    margin-top:50px;
+    border-radius: 20%/50%;
+    height: 90px;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    width: 300px;
+    background-color: #525960;
+}
+
+.todo {
+    background-color: rgb(10, 10, 10);
+    grid-template-rows: auto 30px;
+    opacity: .8;
+    height: auto;
+    width: 320px;
+    z-index: 3;
+    position: absolute;
+    margin-top: 400px;
+    margin-bottom: -190px;
+    margin-right: -400px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.todoheader {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-bottom: 30px;
+}
+
+.todoheaderleft {
+    padding-top: 5px;
+    position: relative;
+    right: 17%;
+}
+
+.todoheaderright {
+    padding-top: 5px;
+    position: relative;
+    left: 17%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+
+.todogreeting {
+    padding-bottom: 30px;
+}
+
+.form-control {
+    outline: none;
+    border: none;
+    width: 300px;
+    height: 15px;
+    margin-top:10px;
+}
+
+ input::placeholder {
+     padding-right: 300px;
+ }
+
+.fa-square {
+    position: relative;
+    left:100px;
+}
+
+.fa-check-square {
+    position: relative;
+    left:100px;
+}
+
+.completed,
+.fancy-checkbox {
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked~.checked {
+    display: none;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked~.unchecked {
+    display: none;
+}
+
+.deletetodo {
+    margin-top: 20px;
+    margin-left: 250px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+
+.options {
+    padding-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+
+.textDisplay {
+    position: absolute;
+    padding-top: 20px;
+    overflow-wrap: break-word;
+    width: 225px;
+    right: 50px;
+}
+
+.check-marker {
+    position: absolute;
+}
+
+.main {
+    display: none;
+}
+
+
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
     body {
+      
     }
+  
     .top-row {
         font-size: 15px;
     }
+  
     #default-clock {
         font-size: 800%;
     }
+  
     .greeting {
         font-size: 25px;
         white-space: nowrap;
     }
+  
     .center-below {
         font-size: 25px;
     }
+  
     /* #focus {
         width: 600px;
     } */
