@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
     background-image: url("../images/Island.jpg");
@@ -18,18 +19,19 @@ body {
     bottom: 0;
 }
 
+/* Top */
 .full {
     height: 100%;
 }
 
-/* Top */
-.top-row{
+.top-row {
     position:absolute;
     top:0;
     left:25px;
     right:25px;
     font-size: 20px;
 }
+
 .top-left {
     position: relative;
     flex: 1 0 auto;
@@ -38,23 +40,138 @@ body {
 #quicklinks {
     margin-top: 25px;
 }
-/* Links */
 
+/* Links */
+#inputbox {
+    background-color: rgb(10, 10, 10);
+    height: auto;
+    width: 200px;
+    opacity: 0.8;
+    color: white;
+    margin: 0px;
+    position: fixed;
+    left: 10px;
+    top: 75px;
+}
+
+#linkname {
+    background-color: rgb(10, 10, 10);
+    color: grey;
+    border: none;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: left;
+    font-size: 18px; 
+    padding-left: 10px;
+}
+
+#linkurl {
+    background-color: rgb(10, 10, 10);
+    color: grey;
+    border: none;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: left;
+    font-size: 18px; 
+    padding-left: 10px;
+}
+
+#newlinks {
+    padding-left: 10px;
+    color: grey;
+}
+
+#linkbutton {
+    color: white;
+    background-color: rgb(10, 10, 10);
+    border: none;
+    font-size: 20px;
+}
+
+.chromelink {
+    color: white;
+    background-color: rgb(10, 10, 10);
+    border: none;
+    font-size: 20px;  
+}
+
+.inputlink {
+    display: none;
+}
+
+.slinkinput {
+    padding: 5px;
+    color: white
+} 
+
+.linkinputs {
+    display: none;
+}
+
+#dellink {
+    display: none;
+}
+
+#alllinks:hover #dellink {
+    display: inline;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display:  none;
+}
+
+#submitlink {
+    display: none;
+}
 
 /* Center */
 .center {
-    display: block;
+    display: grid;
+    justify-content: center;
     width: 100%;
     text-align: center;
-    padding-top: 45%;
+    padding-top: 20%;
 }
 
 /* Clock */
+.add {
+    display: block;
+}
 
+.remove {
+    display:none;
+}
+
+#default-clock {
+    font-size: 800%;
+    color: white;
+    /* position: absolute; */
+    /* width: 300px; */
+    height: 130px;
+    z-index: 15;
+    /* top: 35%;
+    left: 32%; */
+}
+
+#ampm {
+    font-size: 22px;
+    display: inline-block;
+    /* position: absolute;
+    top: 85%;
+    left:60%; */
+}
 
 .greeting {
     display: block;
-    font-size: 337.5%;
+    font-size: 40px;
     letter-spacing: 0;
     white-space: nowrap;
 }
@@ -62,14 +179,14 @@ body {
 /* Center Below */
 .center-below {
     display: block;
-    margin-top: 45px;
+    margin-top: 25px;
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
 }
-input {
-    width: 600px;
+
+#focus {
+    width: 300px;
     margin: 20px auto;
-    padding-top: 25px;
     background: 0;
     border: 0;
     border-bottom: 2px solid #fff;
@@ -80,34 +197,38 @@ input {
 }
 
 /* Bottom */
-.bottom {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
 
-.bottom-right {
-    position: relative;
-    margin-bottom: 25px;
-}
-
- .app todo {
-    position: absolute;
-    padding: 0 15px;
-    font-size: 25px;
- }
 
 /* Todo */
-#todo {
-    margin-left: 88%;
-    padding-top: 60px;
-    font-size: 20px;
-}
-
-
-
-
 
 
 /* Media Stylesheet */
+@media only screen and (max-width: 600px) {
+
+    body {
+
+    }
+
+    .top-row {
+        font-size: 15px;
+    }
+
+    #default-clock {
+        font-size: 800%;
+    }
+
+    .greeting {
+        font-size: 25px;
+        white-space: nowrap;
+    }
+
+    .center-below {
+        font-size: 25px;
+    }
+
+    /* #focus {
+        width: 600px;
+    } */
+
+}
 
