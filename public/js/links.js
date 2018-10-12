@@ -8,11 +8,11 @@ $( function(){
 
     const renderLinks = function (links) {   
         $('#savedlinks').empty();
-        links.forEach(e => render(`<div id="alllinks"><a id="hovlink" href="http://${e.url}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><button type="submit" id="dellink" data-id=${e._id}>x</button></div>`));
+        links.forEach(e => renderloca(`<div id="alllinks"><a id="hovlink" href="http://${e.url}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><span id="dellink" data-id=${e._id}>x</span></div>`));
         };
     
     
-    const render = function (links) {
+    const renderloca = function (links) {
         $('#savedlinks').append(links);
           };
     
@@ -25,7 +25,7 @@ $( function(){
               });
           }
     
-          const toggleLinks = function () {
+        const toggleLinks = function () {
            
            $('.inputlink').toggleClass('show');
            
@@ -90,11 +90,6 @@ $( function(){
         });
         });
     
-        // const adddel = function () {
-        //     addClass('#dellink', 'show');
-        // };
-
-        // on('#alllinks', 'mouseenter', adddel);
 
        
 

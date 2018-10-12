@@ -82,13 +82,13 @@ body {
         color: grey;
     }
    #linkbutton {
-       color: white;
+       color: lightgrey;
        background-color: rgb(10, 10, 10);
        border: none;
        font-size: 20px;
    }
    .chromelink {
-    color: white;
+    color: lightgrey;
     background-color: rgb(10, 10, 10);
     border: none;
     font-size: 20px;  
@@ -98,9 +98,11 @@ body {
     }
    .slinkinput {
        padding: 5px;
-       color: white
+       color: lightgrey;
    } 
-
+#nevermind {
+    background-color: black;
+}
 
     
 .linkinputs {
@@ -109,12 +111,36 @@ body {
 }
 #dellink {
     display: none;
+    /* background-color: black;
+    color: lightgrey;
+    font-size: 10px;
+    border: none;
+    border-radius: 50%; */
+
 }
 
+#alllinks {
+    display: grid;
+    grid-template-columns: 1fr 35px;
+    grid-template-rows:1;
+}
 
 #alllinks:hover #dellink {
     display: inline;
 }
+
+
+#favlinks:hover #favlinks:active {
+    color: white;
+} 
+
+.chromelink:hover, .chromelink:active {
+    color: white;
+} 
+
+#linkbutton:hover, #linkbutton:active {
+    color: white;
+} 
 
 .show {
     display: block;
