@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
     background-image: url("../images/Island.jpg");
@@ -9,12 +10,6 @@ body {
     background-color: transparent;
     opacity: 1;
 }
-.add{
-    display: block;
-}
-.remove{
-    display:none;
-}
 #background {
     position: absolute;
     top: 0;
@@ -22,13 +17,11 @@ body {
     right: 0;
     bottom: 0;
 }
-
+/* Top */
 .full {
     height: 100%;
 }
-
-/* Top */
-.top-row{
+.top-row {
     position:absolute;
     top:0;
     left:25px;
@@ -39,7 +32,6 @@ body {
     position: relative;
     flex: 1 0 auto;
 }
-
 #quicklinks {
     margin-top: 25px;
 }
@@ -55,7 +47,6 @@ body {
     left: 10px;
     top: 75px;
 }
-
 #linkname {
     background-color: rgb(10, 10, 10);
     color: grey;
@@ -68,119 +59,107 @@ body {
     font-size: 18px; 
     padding-left: 10px;
 }
-
-   #linkurl {
-        background-color: rgb(10, 10, 10);
-        color: grey;
-        border: none;
-        width: 150px;
-        margin: 0px;
-        padding: 0px;
-        height: 20px;
-        text-align: left;
-        font-size: 18px; 
-        padding-left: 10px;
-        }
-
-    #newlinks {
-        padding-left: 10px;
-        color: grey;
-    }
-   #linkbutton {
-       color: white;
-       background-color: rgb(10, 10, 10);
-       border: none;
-       font-size: 20px;
-   }
-   .chromelink {
+#linkurl {
+    background-color: rgb(10, 10, 10);
+    color: grey;
+    border: none;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    text-align: left;
+    font-size: 18px; 
+    padding-left: 10px;
+}
+#newlinks {
+    padding-left: 10px;
+    color: grey;
+}
+#linkbutton {
+    color: white;
+    background-color: rgb(10, 10, 10);
+    border: none;
+    font-size: 20px;
+}
+.chromelink {
     color: white;
     background-color: rgb(10, 10, 10);
     border: none;
     font-size: 20px;  
-   }
-     .inputlink {
-        display: none;
-    }
-   .slinkinput {
-       padding: 5px;
-       color: white
-   } 
-
-
-    
+}
+.inputlink {
+    display: none;
+}
+.slinkinput {
+    padding: 5px;
+    color: white
+} 
 .linkinputs {
     display: none;
-
 }
 #dellink {
     display: none;
 }
-
-
 #alllinks:hover #dellink {
     display: inline;
 }
-
 .show {
     display: block;
 }
 .hide {
     display:  none;
 }
-
 #submitlink {
     display: none;
 }
-
-
 /* Center */
 .center {
-    display: block;
+    display: grid;
+    justify-content: center;
     width: 100%;
     text-align: center;
-    padding-top: 45%;
+    padding-top: 20%;
 }
-
 /* Clock */
-
-#default-clock{
-    font-size: 1000%;
-    color: white;
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    z-index: 15;
-    top: 67%;
-    left: 34%;
-    display: inline-block;
-    
+.add {
+    display: block;
 }
-#ampm{
+.remove {
+    display:none;
+}
+#default-clock {
+    font-size: 800%;
+    color: white;
+    /* position: absolute; */
+    /* width: 300px; */
+    height: 130px;
+    z-index: 15;
+    /* top: 35%;
+    left: 32%; */
+}
+#ampm {
     font-size: 22px;
     display: inline-block;
-    position: absolute;
+    /* position: absolute;
     top: 85%;
-    left:60%;
-
+    left:60%; */
 }
 .greeting {
     display: block;
-    font-size: 337.5%;
+    font-size: 40px;
     letter-spacing: 0;
     white-space: nowrap;
 }
-
 /* Center Below */
 .center-below {
     display: block;
-    margin-top: 45px;
+    margin-top: 25px;
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
 }
-input {
-    width: 600px;
+#focus {
+    width: 300px;
     margin: 20px auto;
-    padding-top: 25px;
     background: 0;
     border: 0;
     border-bottom: 2px solid #fff;
@@ -189,127 +168,26 @@ input {
     text-align: center;
     margin-bottom: 0px;
 }
-
 /* Bottom */
-.bottom {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
-.bottom-right {
-    position: relative;
-  visibility: hidden;
-    bottom: 10px;
-    left:1160px;
-
-}
-
- .app todo {
-    position: absolute;
-    padding: 0 15px;
-    font-size: 25px;
- }
-
 /* Todo */
-#todo {
-    margin-left: 88%;
-    padding-top: 60px;
-    font-size: 20px;
-}
-
-.icon {
-    position: absolute;
-   
-}
-
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
-
-.visible {
-    display: block;
-    visibility: visible;
-}
-
-.todo{
-    background-color: rgb(10, 10, 10);
-    grid-template-rows: auto 30px;
-    opacity: .8;
-    height: auto;
-    width: 320px;
-    z-index: 3;
-    position: absolute;
-   margin-top: 400px;
-margin-bottom: -190px;
-margin-right: -400px;
-}
-
-.todoheader {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    margin-bottom: 30px;
-}
-
-.todoheaderleft {
-    padding-top: 5px;
-   position: relative;
-   right: 17%;
-}
-
-.todoheaderright {
-    padding-top: 5px;
-    position: relative;
-    left: 17%;
-}
-
-.todogreeting {
-padding-bottom: 20px;
-}
-
-.newtodo{
-    margin-top:20px;
-border-radius: 20%/50%;
-height: 30px;
-margin-bottom: 20px;
-}
-
-.form-control {
-    width: 100px;
-    height: 15px;
-}
-
-.fa-square {
-position: relative;
-left:100px;
-}
-.fa-check-square {
-    position: relative;
-left:100px;
-}
-.completed,
-.fancy-checkbox {
-    color: black;
-    cursor: pointer;
-}
-
-.fancy-checkbox input[type="checkbox"],
-.fancy-checkbox .checked {
-    display: none;
-}
-
-.fancy-checkbox input[type="checkbox"]:checked~.checked {
-    display: inline-block;
-}
-
-.fancy-checkbox input[type="checkbox"]:checked~.unchecked {
-    display: none;
-}
-
 /* Media Stylesheet */
-
+@media only screen and (max-width: 600px) {
+    body {
+    }
+    .top-row {
+        font-size: 15px;
+    }
+    #default-clock {
+        font-size: 800%;
+    }
+    .greeting {
+        font-size: 25px;
+        white-space: nowrap;
+    }
+    .center-below {
+        font-size: 25px;
+    }
+    /* #focus {
+        width: 600px;
+    } */
+}
