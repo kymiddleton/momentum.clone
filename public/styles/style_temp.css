@@ -1,4 +1,4 @@
-body {
+/* body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -8,17 +8,17 @@ body {
     background-position: center center;
     background-color: transparent;
     opacity: 1;
-}
+} */
 
-.add {
+/* .add {
     display: block;
 }
 
 .remove {
     display:none;
-}
+} */
 
-#background {
+/* #background {
     position: absolute;
     top: 0;
     left: 0;
@@ -28,10 +28,10 @@ body {
 
 .full {
     height: 100%;
-}
+} */
 
 /* Top */
-.top-row {
+/* .top-row {
     position:absolute;
     top:0;
     left:25px;
@@ -46,10 +46,10 @@ body {
 
 #quicklinks {
     margin-top: 25px;
-}
+} */
 
 /* Links */
-#inputbox {
+/* #inputbox {
     background-color: rgb(10, 10, 10);
     height: auto;
     width: 200px;
@@ -140,12 +140,12 @@ body {
 }
 
 /* Center */
-.center {
+/* .center {
     display: block;
     width: 100%;
     text-align: center;
     padding-top: 35%;
-}
+} */
 
 /* Clock */
 #default-clock {
@@ -168,20 +168,20 @@ body {
     left:60%;
 }
 
-.greeting {
+/* .greeting {
     display: block;
     font-size: 337.5%;
     letter-spacing: 0;
     white-space: nowrap;
-}
+} */
 
 /* Center Below */
-.center-below {
+/* .center-below {
     display: block;
     margin-top: 45px;
     text-align: center;
     font-size: 35px;
-}
+} */
 
 input {
     width: 600px;

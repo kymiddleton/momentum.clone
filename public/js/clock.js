@@ -49,12 +49,12 @@ $(function() {
 
         document.getElementById('default-clock').innerHTML = hour + ":" + minute;
     };
-    $('#default-clock').click(function(){
+    $('default-clock').click(function(){
         $('#ampm').toggleClass('remove');
         $('#ampm').toggleClass('add');
     });
     toggle = false;
-    $('#default-clock').click(function(e) {
+    $('default-clock').click(function(e) {
         toggle = !toggle;
         if (toggle) {
             startTime();
