@@ -1,6 +1,5 @@
-body {
+/* body {
     height: 100vh;
-    display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
     background-image: url("../images/Island.jpg");
@@ -9,9 +8,17 @@ body {
     background-position: center center;
     background-color: transparent;
     opacity: 1;
+} */
+
+/* .add {
+    display: block;
 }
 
-#background {
+.remove {
+    display:none;
+} */
+
+/* #background {
     position: absolute;
     top: 0;
     left: 0;
@@ -19,12 +26,12 @@ body {
     bottom: 0;
 }
 
-/* Top */
 .full {
     height: 100%;
-}
+} */
 
-.top-row {
+/* Top */
+/* .top-row {
     position:absolute;
     top:0;
     left:25px;
@@ -39,10 +46,10 @@ body {
 
 #quicklinks {
     margin-top: 25px;
-}
+} */
 
 /* Links */
-#inputbox {
+/* #inputbox {
     background-color: rgb(10, 10, 10);
     height: auto;
     width: 200px;
@@ -133,60 +140,53 @@ body {
 }
 
 /* Center */
-.center {
-    display: grid;
-    justify-content: center;
+/* .center {
+    display: block;
     width: 100%;
     text-align: center;
-    padding-top: 20%;
-}
+    padding-top: 35%;
+} */
 
 /* Clock */
-.add {
-    display: block;
-}
-
-.remove {
-    display:none;
-}
-
 #default-clock {
-    font-size: 800%;
+    font-size: 1000%;
     color: white;
-    /* position: absolute; */
-    /* width: 300px; */
-    height: 130px;
+    position: absolute;
+    width: 300px;
+    height: 200px;
     z-index: 15;
-    /* top: 35%;
-    left: 32%; */
+    top: 40%;
+    left: 34%;
+    letter-spacing: 0px;
 }
 
 #ampm {
     font-size: 22px;
     display: inline-block;
-    /* position: absolute;
+    position: absolute;
     top: 85%;
-    left:60%; */
+    left:60%;
 }
 
-.greeting {
+/* .greeting {
     display: block;
-    font-size: 40px;
+    font-size: 337.5%;
     letter-spacing: 0;
     white-space: nowrap;
-}
+} */
 
 /* Center Below */
-.center-below {
+/* .center-below {
     display: block;
-    margin-top: 25px;
+    margin-top: 45px;
     text-align: center;
-    font-size: 40px;
-}
+    font-size: 35px;
+} */
 
-#focus {
-    width: 300px;
+input {
+    width: 600px;
     margin: 20px auto;
+    padding-top: 25px;
     background: 0;
     border: 0;
     border-bottom: 2px solid #fff;
@@ -197,6 +197,25 @@ body {
 }
 
 /* Bottom */
+.bottom {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.bottom-right {
+    position: relative;
+    visibility: hidden;
+    bottom: 10px;
+    left:1160px;
+}
+
+.app todo {
+    position: absolute;
+    padding: 0 15px;
+    font-size: 25px;
+}
+
 /* Todo */
 #todo {
     margin-left: 88%;
@@ -217,22 +236,8 @@ body {
 }
 
 .visible {
+    display: block;
     visibility: visible;
-}
-.invisible {
-    visibility: hidden;
-}
-
-.newtodo {
-    margin-top:50px;
-    border-radius: 20%/50%;
-    height: 90px;
-    padding-top: 7px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 7px;
-    width: 300px;
-    background-color: #525960;
 }
 
 .todo {
@@ -246,8 +251,6 @@ body {
     margin-top: 400px;
     margin-bottom: -190px;
     margin-right: -400px;
-    overflow-wrap: break-word;
-    overflow: hidden;
 }
 
 .todoheader {
@@ -259,52 +262,44 @@ body {
 
 .todoheaderleft {
     padding-top: 5px;
-    position: relative;
-    right: 17%;
+   position: relative;
+   right: 17%;
 }
 
 .todoheaderright {
     padding-top: 5px;
     position: relative;
     left: 17%;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: small;
 }
 
 .todogreeting {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.newtodo {
+    margin-top:20px;
+    border-radius: 20%/50%;
+    height: 30px;
+    margin-bottom: 20px;
 }
 
 .form-control {
-    outline: none;
-    border: none;
-    width: 300px;
+    width: 100px;
     height: 15px;
-    margin-top:10px;
 }
-
- input::placeholder {
-     padding-right: 300px;
- }
 
 .fa-square {
     position: relative;
     left:100px;
 }
-
 .fa-check-square {
     position: relative;
     left:100px;
 }
-
 .completed,
 .fancy-checkbox {
     color: black;
     cursor: pointer;
-    position: absolute;
-    width: 20px;
 }
 
 .fancy-checkbox input[type="checkbox"],
@@ -313,71 +308,26 @@ body {
 }
 
 .fancy-checkbox input[type="checkbox"]:checked~.checked {
-    display: none;
+    display: inline-block;
 }
 
 .fancy-checkbox input[type="checkbox"]:checked~.unchecked {
     display: none;
 }
 
-.deletetodo {
-    margin-top: 20px;
-    margin-left: 250px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: small;
-}
-
-.options {
-    padding-top: 10px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: small;
-}
-
-.textDisplay {
-    position: absolute;
-    padding-top: 20px;
-    overflow-wrap: break-word;
-    width: 225px;
-    right: 50px;
-}
-
-.check-marker {
-    position: absolute;
-}
-
-.main {
-    display: none;
-}
-
-
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
+
     body {
-      
+        background-size: 150%;
+        /* max-height: auto; */
+        /* max-width: auto; */
+        /* min-width: 300px; */
+        /* min-height: auto; */
+        /* background-size: 100% 100%; */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-  
-    .top-row {
-        font-size: 15px;
-    }
-  
-    #default-clock {
-        font-size: 800%;
-    }
-  
-    .greeting {
-        font-size: 25px;
-        white-space: nowrap;
-    }
-  
-    .center-below {
-        font-size: 25px;
-    }
-  
-    /* #focus {
-        width: 600px;
-    } */
 }
+
