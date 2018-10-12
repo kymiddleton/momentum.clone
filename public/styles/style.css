@@ -232,8 +232,24 @@ input {
 }
 
 .visible {
-    display: block;
     visibility: visible;
+}
+.invisible {
+    visibility: hidden;
+}
+
+.newtodo{
+    margin-top:50px;
+border-radius: 20%/50%;
+height: 90px;
+padding-top: 7px;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 7px;
+
+width: 300px;
+background-color: #525960;
+
 }
 
 .todo{
@@ -247,6 +263,8 @@ input {
    margin-top: 400px;
 margin-bottom: -190px;
 margin-right: -400px;
+overflow-wrap: break-word;
+overflow: hidden;
 }
 
 .todoheader {
@@ -266,23 +284,27 @@ margin-right: -400px;
     padding-top: 5px;
     position: relative;
     left: 17%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
 }
 
 .todogreeting {
-padding-bottom: 20px;
+padding-bottom: 30px;
 }
 
-.newtodo{
-    margin-top:20px;
-border-radius: 20%/50%;
-height: 30px;
-margin-bottom: 20px;
-}
 
 .form-control {
-    width: 100px;
+    outline: none;
+    border: none;
+    width: 300px;
     height: 15px;
+    margin-top:10px;
 }
+ input::placeholder {
+     padding-right: 300px;
+ }
 
 .fa-square {
 position: relative;
@@ -296,6 +318,10 @@ left:100px;
 .fancy-checkbox {
     color: black;
     cursor: pointer;
+    position: absolute;
+
+    width: 20px;
+   
 }
 
 .fancy-checkbox input[type="checkbox"],
@@ -304,12 +330,44 @@ left:100px;
 }
 
 .fancy-checkbox input[type="checkbox"]:checked~.checked {
-    display: inline-block;
+    display: none;
 }
 
 .fancy-checkbox input[type="checkbox"]:checked~.unchecked {
     display: none;
 }
 
+.deletetodo {
+    margin-top: 20px;
+    margin-left: 250px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+.options {
+    padding-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+
+.textDisplay {
+    position: absolute;
+    padding-top: 20px;
+    overflow-wrap: break-word;
+    width: 225px;
+    right: 50px;
+ 
+}
+.check-marker {
+    position: absolute;
+}
+
+.main {
+    display: none;
+
+}
 /* Media Stylesheet */
 
