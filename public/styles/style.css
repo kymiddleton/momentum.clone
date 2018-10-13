@@ -60,7 +60,7 @@ body {
     padding: 0px;
     height: 20px;
     text-align: left;
-    font-size: 18px; 
+    font-size: 16px; 
     padding-left: 10px;
     }
 
@@ -85,13 +85,13 @@ body {
        color: lightgrey;
        background-color: rgb(10, 10, 10);
        border: none;
-       font-size: 20px;
+       font-size: 16px;
    }
    .chromelink {
     color: lightgrey;
     background-color: rgb(10, 10, 10);
     border: none;
-    font-size: 20px;  
+    font-size: 18px;  
    }
      .inputlink {
         display: none;
@@ -223,4 +223,3 @@ input {
 
 
 /* Media Stylesheet */
-

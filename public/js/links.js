@@ -8,7 +8,7 @@ $( function(){
 
     const renderLinks = function (links) {   
         $('#savedlinks').empty();
-        links.forEach(e => renderloca(`<div id="alllinks"><a id="hovlink" href="http://${e.url}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><span id="dellink" data-id=${e._id}>x</span></div>`));
+        links.forEach(e => renderloca(`<div id="alllinks"><a id="hovlink" href="https://${e.url}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><span id="dellink" data-id=${e._id}>x</span></div>`));
         };
     
     
@@ -54,8 +54,11 @@ $( function(){
         const newLink = {
             linkName: $('#linkname').val().trim(),
             url: $('#linkurl').val().trim(),
+        
         };
-    
+        console.log(newLink.url);
+
+        
         for (let key in newLink) {
             if (newLink[key] === '') {
                 alert('Please fill out all fields');
@@ -63,10 +66,11 @@ $( function(){
                 return;
             }
         }
-    
+       
         $.ajax({ url: '/api/linksLog', method: 'POST', data: newLink })
             .then(function (data) {
-                    console.log(newLink);
+                    console.log(newLink)
+                
                     $('#linkname').val('');
                     $('#linkurl').val('');
                 
