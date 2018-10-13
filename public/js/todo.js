@@ -1,12 +1,20 @@
 //A todo list with ability to add, update, and delete 
 
-function showtoDoList(){
-    $('.bottom-right').toggleClass('show');
+function showtoDoList() {
+    $('.bottom-right').toggleClass('visible');
+    $('.form-control').addClass('invisible');
 }
-    $('#todospan').on('click', showtoDoList);
+$('#todospan').on('click', showtoDoList);
+
+function showNewToDo() {
+    $('.newtodo').addClass('hide');
+    $('.form-control').removeClass('invisible');
+    $('.todogreeting').addClass('hide');
+  
+}
+$('#newtodobutton').on('click', showNewToDo);
 
 
-    
 $(function () {
     const state = {
         todo: [],
@@ -24,19 +32,18 @@ $(function () {
 
         const label = $('<label>').addClass('check-marker');
         const checkbox = $('<input type="checkbox">')
-            .attr('checked', todo.todoStatus)
+            .attr('checked', todo.todoStatus.completed)
             .addClass('completed')
             .attr('data-id', todo._id);
 
 
         label.append(checkbox);
-        label.append('<i class="fas fa-check-square checked">');
-        label.append('<i class="far fa-square unchecked">');
+      
 
 
         const elem = $('<span>').text(todo.todoItem).addClass('textDisplay');
 
-        const elem2 = $('<button><i class="fas fa-ellipsis-h"></i></button>')
+        const elem2 = $('<button class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
             .addClass('delete')
             .attr('data-id', todo._id)
             .append('<i>')
@@ -44,18 +51,6 @@ $(function () {
         toDoListElement.append(label, elem, elem2)
         output.append(toDoListElement);
     }
-
-    
-    
-  
-
-    //   $('#options').on('click', function (event) {
-    //     event.preventDefault();
-    // const optionsElement = $('<div>').addClass('option box');
-    // const div = $('<div>').addClass('option box label');
-
-    // div.append('<div>"Edit"</div>')
-    //   });
 
 
     const renderToDos = function (outputElement, todo) {
@@ -73,7 +68,15 @@ $(function () {
             });
     }
 
-    
+    var input = document.getElementById("toDoInput");
+
+   input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("enterData").click();
+            console.log("we clikced enter")
+        }
+    });
 
     $('.submit').on('click', function (event) {
         event.preventDefault();
@@ -91,16 +94,7 @@ $(function () {
             }
         }
 
-        $.ajax({ url: '/api/todoLog', method: 'POST', data: newToDo }).then(
-            function (data) {
 
-                if (data.success) {
-
-                    console.log('data', data)
-                    $('#content').val('');
-                    $('#content').focus();
-                }
-            })
 
         $.ajax({
             url: '/api/todoLog',
@@ -111,8 +105,8 @@ $(function () {
                 if (data.success) {
 
                     console.log('data', data)
-                    $('#toDoInput').val('');
-                    $('#toDoInput').focus();
+                    $('#content').val('');
+                    $('#content').focus();
 
                     render();
                 } else {
