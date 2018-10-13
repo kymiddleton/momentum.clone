@@ -8,7 +8,7 @@ $( function(){
 
     const renderLinks = function (links) {   
         $('#savedlinks').empty();
-        links.forEach(e => renderloca(`<div id="alllinks"><a id="hovlink" href="${e.saveurl}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><span id="dellink" data-id=${e._id}>x</span></div>`));
+        links.forEach(e => renderloca(`<div id="alllinks"><a id="hovlink" href="${e.saveurl}"><img src="https://www.google.com/s2/favicons?domain=${e.saveurl}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><span id="dellink" data-id=${e._id}>x</span></div>`));
         };
     
     
