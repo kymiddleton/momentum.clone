@@ -169,12 +169,12 @@ body {
 .milc {
     font-size: 970%;
     color: white;
-    position: absolute;
-    width: 300px;
-    height: 200px;
+    /* position: absolute; */
+    /* width: 300px; */
+    height: 130px;
     z-index: 15;
-    top: 67%;
-    left: 35%;
+    /* top: 67%;
+    left: 35%; */
     display: inline-block;
 }
 
@@ -277,13 +277,6 @@ body {
     overflow: hidden;
 }
 
-.todoheader {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    margin-bottom: 30px;
-}
-
 .todoheaderleft {
     padding-top: 5px;
     position: relative;
@@ -334,16 +327,11 @@ body {
     width: 20px;
 }
 
-.fancy-checkbox input[type="checkbox"],
-.fancy-checkbox .checked {
-    display: none;
+.center-below {
+    font-size: 25px;
 }
 
 .fancy-checkbox input[type="checkbox"]:checked~.checked {
-    display: none;
-}
-
-.fancy-checkbox input[type="checkbox"]:checked~.unchecked {
     display: none;
 }
 
