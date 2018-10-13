@@ -3,6 +3,7 @@
 function showtoDoList() {
     $('.bottom-right').toggleClass('visible');
     $('.form-control').addClass('invisible');
+  
 }
 $('#todospan').on('click', showtoDoList);
 
@@ -69,7 +70,7 @@ $(function () {
     }
 
     var input = document.getElementById("toDoInput");
-
+    
    input.addEventListener("keyup", function(event) {
         event.preventDefault();
         if (event.keyCode === 13) {

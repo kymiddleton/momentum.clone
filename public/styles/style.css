@@ -20,9 +20,9 @@ body {
 }
 
 /* Top */
-.full {
+/* .full {
     height: 100%;
-}
+} */
 
 .top-row {
     position:absolute;
@@ -142,10 +142,6 @@ body {
 }
 
 /* Clock */
-.rc {
-    font-size: 970%;
-}
-
 .add {
     display: block;
 }
@@ -154,27 +150,19 @@ body {
     display:none;
 }
 
-#default-clock {
-    font-size: 800%;
-    color: white;
-    /* position: absolute; */
-    /* width: 300px; */
-    height: 130px;
-    z-index: 15;
-    /* top: 67%; */
-    /* left:37.5%; */
-    display: inline-block;  
+.rc {
+    font-size: 970%;
 }
 
 .milc {
     font-size: 970%;
     color: white;
-    position: absolute;
-    width: 300px;
+    /* position: absolute;
+    width: 300px; */
     height: 200px;
     z-index: 15;
-    top: 67%;
-    left: 35%;
+    /* top: 67%;
+    left: 35%; */
     display: inline-block;
 }
 
@@ -199,6 +187,7 @@ body {
     font-size: 40px;
     letter-spacing: 0;
     white-space: nowrap;
+    padding: 20px;
 }
 
 /* Center Below */
@@ -207,10 +196,11 @@ body {
     margin-top: 25px;
     text-align: center;
     font-size: 40px;
+
 }
 
 #focus {
-    width: 300px;
+    width: 382px;
     margin: 20px auto;
     background: 0;
     border: 0;
@@ -222,28 +212,53 @@ body {
 }
 
 /* Bottom */
+.bottom {
+    display: block;
+    width: 100%;
+    text-align: center;
+ }
+ 
+
 
 /* Todo */
+.todobox {
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto 40px;
+    margin-bottom: 0%;
+    bottom: 40px;
+}
 #todo {
-    margin-left: 88%;
-    padding-top: 60px;
-    font-size: 20px;
+    float: bottom;
+    margin-bottom: 10%;
+    float: right;
+    margin-right: 100px;
+ 
+ }
+
+
+.todo {
+    background-color: rgb(10, 10, 10);
+    grid-template-rows: auto 30px;
+    opacity: .8;
+    height: auto;
+    width: 320px;
+    z-index: 3;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    visibility: hidden;
+
 }
 
-.icon {
+
+/* .icon {
     position: absolute;
-}
+ 
+} */
 
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
 
 .visible {
     visibility: visible;
+
 }
 
 .invisible {
@@ -262,20 +277,7 @@ body {
     background-color: #525960;
 }
 
-.todo {
-    background-color: rgb(10, 10, 10);
-    grid-template-rows: auto 30px;
-    opacity: .8;
-    height: auto;
-    width: 320px;
-    z-index: 3;
-    position: absolute;
-    margin-top: 400px;
-    margin-bottom: -190px;
-    margin-right: -400px;
-    overflow-wrap: break-word;
-    overflow: hidden;
-}
+
 
 .todoheader {
     display:grid;
@@ -305,11 +307,15 @@ body {
 }
 
 .form-control {
+    background-color: transparent;
+    color: white;
     outline: none;
     border: none;
     width: 300px;
-    height: 15px;
+    height: 40px;
     margin-top:10px;
+    text-align: left;
+    font-size: medium;
 }
 
  input::placeholder {
@@ -330,8 +336,8 @@ body {
 .fancy-checkbox {
     color: black;
     cursor: pointer;
-    position: absolute;
-    width: 20px;
+
+
 }
 
 .fancy-checkbox input[type="checkbox"],
@@ -348,8 +354,7 @@ body {
 }
 
 .deletetodo {
-    margin-top: 20px;
-    margin-left: 250px;
+
     background-color: transparent;
     border: none;
     color: white;
@@ -365,15 +370,18 @@ body {
 }
 
 .textDisplay {
-    position: absolute;
-    padding-top: 20px;
+    position: relative;
+
     overflow-wrap: break-word;
     width: 225px;
-    right: 50px;
+
+    text-align: left;
+    padding-left: 5px;
 }
 
 .check-marker {
-    position: absolute;
+    position: relative;
+
 }
 
 .main {
@@ -383,28 +391,39 @@ body {
 
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
-    body {
-      
-    }
   
+    body {
+
+    }
+ 
     .top-row {
         font-size: 15px;
     }
-  
-    #default-clock {
+ 
+    .center {
+        padding-top: 25%;
+    }
+ 
+    .rc, .milc {
         font-size: 800%;
     }
-  
+ 
+    #ampm {
+        font-size: 22px;
+    }
+ 
     .greeting {
         font-size: 25px;
         white-space: nowrap;
     }
-  
+ 
     .center-below {
         font-size: 25px;
     }
-  
+
+    
+ 
     /* #focus {
-        width: 600px;
+        width: 800px;
     } */
-}
+ }
