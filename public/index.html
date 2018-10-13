@@ -14,7 +14,6 @@
     <title>Momentum Dashboard</title>
 </head>
 
-
 <body>
 
     </div>
@@ -25,9 +24,7 @@
         <div class="full"></div>
         <div class="top-row">
             <div class="top-left"></div>
-
-             <div id="quicklinks"></div><span id="favlinks">Links</span>
-
+            <div id="quicklinks"></div><span id="favlinks">Links</span>
         </div>
 
         <div id="inputbox" class="inputlink">
@@ -42,36 +39,28 @@
                 <button type="submit" id="submitlink">ADD</button>
             </form>
         </div>
-
         <div class="top-right"></div>
-        <div id="weather" class="app-container weather">
+
+        <div class="center">
+            <div class="app-container clock">
+                <div class='milc' id="default-clock"></div>
+                <div class="add" id="ampm"></div>
+            </div>
+
+            <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>,
+                <span class="name" spellcheck="false">CJ</span>.
+            </div>
         </div>
-    </div>
 
-    <div class="center">
-        <div class="app-container clock">
-            <div id="default-clock" ></div><div class="remove" id="ampm"></div>
+        <div class="center-below">
+            <div class="prompt">
+                <h3>What is your main focus for today?</h3>
+                <input type="text" id="focus">
+            </div>
         </div>
-      
-        <div id="greeting" class="app-container greeting transition">Good <span class="period">evening</span>,
-            <span class="name" spellcheck="false">CJ</span>.
 
-        </div>
-    </div>
-
-
-    <div class="center-below">
-        <div class="prompt">
-            <h3>What is your main focus for today?</h3>
-            <input type="text">
-        </div>
-    </div>
-    
-   
-    <div class="bottom">
-
-            <div class="app-container quote">
-                <div class="bottom-left" id="bottom-left"></div>
+        <div class="bottom">
+            <div class="bottom-left" id="bottom-left"></div>
                 
               <div class="bottom-right todo" id="todoright">
                   <div class = "todoheader">
@@ -86,21 +75,16 @@
                   </div>
                 <div class = "contenttodo"id="content">
 
-                    </div>
-            <input type="text" class="form-control" id="toDoInput" placeholder="New Todo">
-            <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
-            
+                <input type="text" class="form-control" id="toDoInput" placeholder="New Todo">
+                <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
+                <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
+            </div>
         </div>
-        <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
-
     </div>
 
-
-
-    <script src="./js/clock.js"></script>
-    <script src="./js/links.js"></script>
-    <script src="./js/todo.js"></script>
-
+    <script src="/js/clock.js"></script>
+    <script src="/js/links.js"></script>
+    <script src="/js/todo.js"></script>
 </body>
 
 </html>

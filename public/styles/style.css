@@ -142,6 +142,10 @@ body {
 }
 
 /* Clock */
+.rc {
+    font-size: 970%;
+}
+
 .add {
     display: block;
 }
@@ -157,16 +161,37 @@ body {
     /* width: 300px; */
     height: 130px;
     z-index: 15;
-    /* top: 35%;
-    left: 32%; */
+    /* top: 67%; */
+    /* left:37.5%; */
+    display: inline-block;  
+}
+
+.milc {
+    font-size: 970%;
+    color: white;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 67%;
+    left: 35%;
+    display: inline-block;
 }
 
 #ampm {
     font-size: 22px;
     display: inline-block;
-    /* position: absolute;
-    top: 85%;
-    left:60%; */
+    /* position: absolute; */
+    /* top: 83%; */
+    /* left:62%; */
+    opacity: 0;
+    -webkit-transition: all 5s ease-in-out;
+    -moz-transition: all 5s ease-in-out;
+    -ms-transition: all 5s ease-in-out;
+    -o-transition: all 5s ease-in-out;
+    transition: all 5s ease-in-out;
+    /* top: 35%;
+    left: 32%; */
 }
 
 .greeting {
@@ -197,6 +222,7 @@ body {
 }
 
 /* Bottom */
+
 /* Todo */
 #todo {
     margin-left: 88%;
@@ -219,6 +245,7 @@ body {
 .visible {
     visibility: visible;
 }
+
 .invisible {
     visibility: hidden;
 }
