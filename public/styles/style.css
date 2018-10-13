@@ -157,9 +157,15 @@ body {
 .milc {
     font-size: 970%;
     color: white;
+<<<<<<< HEAD
     /* position: absolute;
     width: 300px; */
     height: 200px;
+=======
+    /* position: absolute; */
+    /* width: 300px; */
+    height: 130px;
+>>>>>>> 7d3ce364667877402748311da6a85ffe5b5ec8dc
     z-index: 15;
     /* top: 67%;
     left: 35%; */
@@ -279,13 +285,6 @@ body {
 
 
 
-.todoheader {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    margin-bottom: 30px;
-}
-
 .todoheaderleft {
     padding-top: 5px;
     position: relative;
@@ -340,16 +339,11 @@ body {
 
 }
 
-.fancy-checkbox input[type="checkbox"],
-.fancy-checkbox .checked {
-    display: none;
+.center-below {
+    font-size: 25px;
 }
 
 .fancy-checkbox input[type="checkbox"]:checked~.checked {
-    display: none;
-}
-
-.fancy-checkbox input[type="checkbox"]:checked~.unchecked {
     display: none;
 }
 
@@ -426,4 +420,8 @@ body {
     /* #focus {
         width: 800px;
     } */
+<<<<<<< HEAD
  }
+=======
+}
+>>>>>>> 7d3ce364667877402748311da6a85ffe5b5ec8dc
