@@ -15,6 +15,8 @@ $(function() {
         minute = appendZero(minute);
         
         document.getElementById('default-clock').innerHTML = hour + ":" + minute;
+        $("#default-clock").addClass("milc");
+        $("#default-clock").removeClass("rc");
     };
 
     function base12Hour (hour, minute){
@@ -48,6 +50,8 @@ $(function() {
         minute = tempArray[1];
 
         document.getElementById('default-clock').innerHTML = hour + ":" + minute;
+        $("#default-clock").addClass("rc");
+        $("#default-clock").removeClass("milc")
     };
     $('default-clock').click(function(){
         $('#ampm').toggleClass('remove');
@@ -56,11 +60,27 @@ $(function() {
     toggle = false;
     $('default-clock').click(function(e) {
         toggle = !toggle;
+        $('#ampm').toggleClass('remove');
+        $('#ampm').toggleClass('add');
+        // $("#default-clock").toggleClass("milc");
+        // $("#default-clock").toggleClass("rc");
         if (toggle) {
             startTime();
+      console.log("rc" +toggle);
         } else {
             twelveTime();
+            console.log("mc" +toggle);
         }
     });
-
+    $('#default-clock').on('click', function() {
+        if ($('#ampm').css('opacity') == 0) {
+            $('#ampm').css('opacity', 1);
+        }
+        else {
+            $('#ampm').css('opacity', 0);
+        }
+    });
+    //$('#default-clock').on('click', function() {
+        // $(".rc").toggleClass("milc");
+        // $(".milc").toggleClass("rc");});
 });
