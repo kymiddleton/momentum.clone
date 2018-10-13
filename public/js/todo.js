@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+//A todo list with ability to add, update, and delete 
+
+function showtoDoList() {
+    $('.bottom-right').toggleClass('visible');
+    $('.form-control').addClass('invisible');
+  
+}
+$('#todospan').on('click', showtoDoList);
+
+function showNewToDo() {
+    $('.newtodo').addClass('hide');
+    $('.form-control').removeClass('invisible');
+    $('.todogreeting').addClass('hide');
+=======
 // //A todo list with ability to add, update, and delete 
 
 // function showtoDoList() {
@@ -10,6 +25,7 @@
 //     $('.newtodo').addClass('hide');
 //     $('.form-control').removeClass('invisible');
 //     $('.todogreeting').addClass('hide');
+>>>>>>> 7d3ce364667877402748311da6a85ffe5b5ec8dc
   
 // }
 // $('#newtodobutton').on('click', showNewToDo);
@@ -68,6 +84,17 @@
 //             });
 //     }
 
+<<<<<<< HEAD
+    var input = document.getElementById("toDoInput");
+    
+   input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("enterData").click();
+            console.log("we clikced enter")
+        }
+    });
+=======
 //     var input = document.getElementById("toDoInput");
 
 //    input.addEventListener("keyup", function(event) {
@@ -77,6 +104,7 @@
 //             console.log("we clikced enter")
 //         }
 //     });
+>>>>>>> 7d3ce364667877402748311da6a85ffe5b5ec8dc
 
 //     $('.submit').on('click', function (event) {
 //         event.preventDefault();
