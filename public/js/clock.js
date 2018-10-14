@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 // A moving clock set to EST
 
 
+=======
+>>>>>>> ce56820abf1de8420a4b609510dbdc9decdae3f4
 $(function() {
     startTime();
 
@@ -56,8 +59,12 @@ $(function() {
         $("#default-clock").addClass("rc");
         $("#default-clock").removeClass("milc")
     };
+    $('default-clock').click(function(){
+        $('#ampm').toggleClass('remove');
+        $('#ampm').toggleClass('add');
+    });
     toggle = false;
-    $('#default-clock').click(function(e) {
+    $('default-clock').click(function(e) {
         toggle = !toggle;
         $('#ampm').toggleClass('remove');
         $('#ampm').toggleClass('add');

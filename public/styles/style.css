@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
     background-image: url("../images/Island.jpg");
@@ -18,18 +19,19 @@ body {
     bottom: 0;
 }
 
-.full {
-    height: 100%;
-}
-
 /* Top */
-.top-row{
+/* .full {
+    height: 100%;
+} */
+
+.top-row {
     position:absolute;
     top:0;
     left:25px;
     right:25px;
     font-size: 20px;
 }
+
 .top-left {
     position: relative;
     flex: 1 0 auto;
@@ -38,6 +40,7 @@ body {
 #quicklinks {
     margin-top: 25px;
 }
+
 /* Links */
 #inputbox {
     background-color: rgb(10, 10, 10);
@@ -49,9 +52,9 @@ body {
     position: fixed;
     left: 10px;
     top: 75px;
-    }
+}
 
-    #linkname {
+#linkname {
     background-color: rgb(10, 10, 10);
     color: grey;
     border: none;
@@ -62,7 +65,7 @@ body {
     text-align: left;
     font-size: 16px; 
     padding-left: 10px;
-    }
+}
 
    #linkurl {
         background-color: rgb(10, 10, 10);
@@ -108,11 +111,10 @@ body {
     background-color: black;
 }
 
-    
 .linkinputs {
     display: none;
-
 }
+
 #dellink {
     display: none;
     cursor: pointer;
@@ -146,6 +148,7 @@ body {
 .show {
     display: block;
 }
+
 .hide {
     display:  none;
 }
@@ -154,36 +157,76 @@ body {
     display: none;
 }
 
-
 /* Center */
 .center {
-    display: block;
+    display: grid;
+    justify-content: center;
     width: 100%;
     text-align: center;
-    padding-top: 45%;
+    padding-top: 20%;
 }
 
 /* Clock */
+.add {
+    display: block;
+}
 
+.remove {
+    display:none;
+}
+
+.rc {
+    font-size: 970%;
+}
+
+.milc {
+    font-size: 970%;
+    color: white;
+    /* position: absolute; */
+    /* width: 300px; */
+    height: 130px;
+    z-index: 15;
+    /* top: 67%;
+    left: 35%; */
+    display: inline-block;
+}
+
+#ampm {
+    font-size: 22px;
+    display: inline-block;
+    /* position: absolute; */
+    /* top: 83%; */
+    /* left:62%; */
+    opacity: 0;
+    -webkit-transition: all 5s ease-in-out;
+    -moz-transition: all 5s ease-in-out;
+    -ms-transition: all 5s ease-in-out;
+    -o-transition: all 5s ease-in-out;
+    transition: all 5s ease-in-out;
+    /* top: 35%;
+    left: 32%; */
+}
 
 .greeting {
     display: block;
-    font-size: 337.5%;
+    font-size: 40px;
     letter-spacing: 0;
     white-space: nowrap;
+    padding: 20px;
 }
 
 /* Center Below */
 .center-below {
     display: block;
-    margin-top: 45px;
+    margin-top: 25px;
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
+
 }
-input {
-    width: 600px;
+
+#focus {
+    width: 382px;
     margin: 20px auto;
-    padding-top: 25px;
     background: 0;
     border: 0;
     border-bottom: 2px solid #fff;
@@ -198,29 +241,209 @@ input {
     display: block;
     width: 100%;
     text-align: center;
-}
-
-.bottom-right {
-    position: relative;
-    margin-bottom: 25px;
-}
-
- .app todo {
-    position: absolute;
-    padding: 0 15px;
-    font-size: 25px;
  }
+ 
+
 
 /* Todo */
+.todobox {
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto 40px;
+    margin-bottom: 0%;
+    bottom: 40px;
+}
 #todo {
-    margin-left: 88%;
-    padding-top: 60px;
-    font-size: 20px;
+    float: bottom;
+    margin-bottom: 10%;
+    float: right;
+    margin-right: 100px;
+ 
+ }
+
+
+.todo {
+    background-color: rgb(10, 10, 10);
+    grid-template-rows: auto 30px;
+    opacity: .8;
+    height: auto;
+    width: 320px;
+    z-index: 3;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    visibility: hidden;
+
+}
+
+
+/* .icon {
+    position: absolute;
+ 
+} */
+
+
+.visible {
+    visibility: visible;
+
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.newtodo {
+    margin-top:50px;
+    border-radius: 20%/50%;
+    height: 90px;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    width: 300px;
+    background-color: #525960;
 }
 
 
 
+.todoheaderleft {
+    padding-top: 5px;
+    position: relative;
+    right: 17%;
+}
 
+.todoheaderright {
+    padding-top: 5px;
+    position: relative;
+    left: 17%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+
+.todogreeting {
+    padding-bottom: 30px;
+}
+
+.form-control {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    width: 300px;
+    height: 40px;
+    margin-top:10px;
+    text-align: left;
+    font-size: medium;
+}
+
+ input::placeholder {
+     padding-right: 300px;
+ }
+
+.fa-square {
+    position: relative;
+    left:100px;
+}
+
+.fa-check-square {
+    position: relative;
+    left:100px;
+}
+
+.completed,
+.fancy-checkbox {
+    color: black;
+    cursor: pointer;
+
+
+}
+
+.center-below {
+    font-size: 25px;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked~.checked {
+    display: none;
+}
+
+.deletetodo {
+
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+
+.options {
+    padding-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: small;
+}
+
+.textDisplay {
+    position: relative;
+
+    overflow-wrap: break-word;
+    width: 225px;
+
+    text-align: left;
+    padding-left: 5px;
+}
+
+.check-marker {
+    position: relative;
+
+}
+
+.main {
+    display: none;
+}
 
 
 /* Media Stylesheet */
+<<<<<<< HEAD
+=======
+@media only screen and (max-width: 600px) {
+  
+    body {
+
+    }
+ 
+    .top-row {
+        font-size: 15px;
+    }
+ 
+    .center {
+        padding-top: 25%;
+    }
+ 
+    .rc, .milc {
+        font-size: 800%;
+    }
+ 
+    #ampm {
+        font-size: 22px;
+    }
+ 
+    .greeting {
+        font-size: 25px;
+        white-space: nowrap;
+    }
+ 
+    .center-below {
+        font-size: 25px;
+    }
+
+    
+ 
+    /* #focus {
+        width: 800px;
+    } */
+<<<<<<< HEAD
+ }
+=======
+}
+>>>>>>> 7d3ce364667877402748311da6a85ffe5b5ec8dc
+>>>>>>> ce56820abf1de8420a4b609510dbdc9decdae3f4
