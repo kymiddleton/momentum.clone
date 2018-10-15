@@ -49,7 +49,7 @@ $(function () {
             linkName: $('#linkname').val().trim(),
             url: $('#linkurl').val().trim(),
         };
-
+    
         for (let key in newLink) {
             if (newLink[key] === '') {
                 alert('Please fill out all fields');

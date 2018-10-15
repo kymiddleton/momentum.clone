@@ -193,7 +193,7 @@ body {
     z-index: 15;
     /* top: 67%;
     left: 35%; */
-     display: inline-block;
+    display: inline-block;
  }
 
  #ampm {
@@ -281,9 +281,9 @@ h3 {
     color: white;
     /* padding-bottom: 20px; */
     /* margin-top: 100px; */
- }
+}
 
- .todo {
+.todo {
     background-color: rgb(10, 10, 10);
     grid-template-rows: auto 30px;
     opacity: .8;
@@ -482,11 +482,11 @@ textarea {
 
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
-
+  
     body {
 
     }
-
+ 
     .top-row {
         font-size: 15px;
     }
@@ -497,24 +497,22 @@ textarea {
     
     .milc {
         font-size: 970%;
-     }
+    }
     
-     #ampm {
+    #ampm {
         font-size: 22px;
     }
-
+ 
     .greeting {
         font-size: 25px;
         white-space: nowrap;
     }
-
+ 
     .center-below {
         font-size: 25px;
     }
-
+ 
     /* #focus {
-        width: 600px;
+        width: 800px;
     } */
-
 }
-

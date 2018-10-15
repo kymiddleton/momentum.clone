@@ -9,9 +9,11 @@ module.exports = function (app) {
         console.log('--------retrieving---------');
         db.todo.find({})
             .then(function (dbtodo) {
+                console.log(dbtodo)
                 res.json(dbtodo);
             })
             .catch(function (err) {
+                console.log(err)
                 res.json(err);
             });
     });
@@ -21,10 +23,11 @@ module.exports = function (app) {
         console.log('------Adding to todo in mongo');
         db.todo.create(req.body)
             .then(function (dbtodo) {
-                res.json(dbtodo);
+                console.log();
+                res.json({ success: true });
             })
             .catch(function (err) {
-                res.json(err);
+                res.json({ success: false });
             });
     });
 
@@ -41,17 +44,18 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes link content
-    app.delete('/api/todoLog', function (req, res) { //Works
-        console.log('--------deleting--------');
-        db.todo.findByIdAndRemove(req.body.id, function (err, todo) {
-            if (err) return res.status(500).send(err);
-            // We'll create a simple object to send back with a message and the id of the document that was removed
+    app.delete('/api/todoLog/:id', function (req, res) {
 
-            const response = {
-                message: "Todo successfully deleted",
-                id: todo._id
-            };
-            return res.status(200).send(response);
-        });
+        db.todo.deleteOne({_id: req.params.id})
+            .then(function (dbtodos) {
+                res.json({
+                    success: true
+                })
+            })
+            .catch(function (err) {
+                res.json({
+                    success: false})
+            })
     });
+ 
 };

@@ -9,7 +9,6 @@ function showNewToDo() {
     $('.newtodo').addClass('invisible');
     $('.form-control').removeClass('invisible');
     $('.todonew').addClass('hide');
-
 }
 $('#newtodobutton').on('click', showNewToDo);
 
@@ -85,42 +84,107 @@ $(function () {
     });
 
     $('.submit').on('click', function (event) {
+  
+// }
+// $('#newtodobutton').on('click', showNewToDo);
+
+
+// $(function () {
+//     const state = {
+//         todo: [],
+//     };
+
+//     const render = function () {
+//         $('#content').empty();
+//         runToDoQuery();
+//     }
+
+//     const renderToDo = function (outputElement, todo, _id) {
+//         const output = $(outputElement);
+
+//         const toDoListElement = $('<div>').addClass('toDo');
+
+//         const label = $('<label>').addClass('check-marker');
+//         const checkbox = $('<input type="checkbox">')
+//             .attr('checked', todo.todoStatus.completed)
+//             .addClass('completed')
+//             .attr('data-id', todo._id);
+
+
+//         label.append(checkbox);
+      
+
+
+//         const elem = $('<span>').text(todo.todoItem).addClass('textDisplay');
+
+//         const elem2 = $('<button class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
+//             .addClass('delete')
+//             .attr('data-id', todo._id)
+//             .append('<i>')
+//         console.log(elem);
+//         toDoListElement.append(label, elem, elem2)
+//         output.append(toDoListElement);
+//     }
+
+
+//     const renderToDos = function (outputElement, todo) {
+//         const output = $(outputElement);
+//         output.empty();
+//         todo.forEach((todo) => renderToDo(outputElement, todo));
+//     }
+
+//     const runToDoQuery = function () {
+
+//         $.ajax({ url: "/api/todoLog", method: "GET" })
+//             .then(function (todo) {
+//                 state.todo = todo
+//                 renderToDos('#content', todo);
+//             });
+//     }
+
+    var input = document.getElementById("toDoInput");
+    
+   input.addEventListener("keyup", function(event) {
+
         event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("enterData").click();
+            console.log("we clikced enter")
+        }
+    });
+
+//     var input = document.getElementById("toDoInput");
 
         const newToDo = {
             thingToDo: $('#toDoInput').val().trim(),
             completed: false,
         };
 
-        for (let key in newToDo) {
-            if (newToDo[key] === '') {
-                alert('Please Enter Something To Do!');
-                return;
-            }
-        }
+//     $('.submit').on('click', function (event) {
+//         event.preventDefault()
 
-        $.ajax({ url: '/api/toDoSchema', method: 'POST', data: newToDo }).then(
-            function (data) {
+//         const newToDo = {
+//             todoItem: $('#toDoInput').val().trim(),
+//             todoStatus: false,
 
-                if (data.success) {
+//         };
 
-                    console.log('data', data)
-                    $('#content').val('');
-                    $('#content').focus();
-                }
-            })
+//         for (let key in newToDo) {
+//             if (newToDo[key] === '') {
+//                 alert('Please Enter Something To Do!');
+//                 return;
+//             }
+//         }
 
-        $.ajax({
-            url: '/api/toDoSchema',
-            method: 'POST',
-            data: newToDo
-        }).then(
-            function (data) {
-                if (data.success) {
 
-                    console.log('data', data)
-                    $('#toDoInput').val('');
-                    $('#toDoInput').focus();
+
+//         $.ajax({
+//             url: '/api/todoLog',
+//             method: 'POST',
+//             data: newToDo
+//         }).then(
+//             function (data) {
+//                 if (data.success) {
 
                     render();
                 } else {
@@ -134,7 +198,7 @@ $(function () {
         const completed = event.target.checked;
         const toDoUpdate = state.toDoList[Number(thisId)];
 
-        toDoUpdate.completed = completed;
+//         const toDoUpdate = state.todo[Number(thisId)];
 
         $.ajax({
             url: `/api/toDoSchema/${thisId}`,
@@ -153,7 +217,8 @@ $(function () {
     $('body').on('click', '.delete', function (event) {
         const todoID = $(this).attr('data-id');
 
-        console.log(state.toDoList[Number(todoID)])
+//     $('body').on('click', '.delete', function (event) {
+//         const todoID = $(this).attr('data-id');
 
         $.ajax({
             url: `/api/toDoSchema/${todoID}`,
