@@ -1,4 +1,5 @@
 // A moving clock set to EST
+
 $(function() {
     startTime();
 
