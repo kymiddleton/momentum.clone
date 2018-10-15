@@ -6,18 +6,28 @@ body {
     background-image: url("../images/Island.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-color: transparent;
     opacity: 1;
+    background-attachment: fixed; 
 }
 
-#background {
+.background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
+
+/* .background-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+} */
 
 /* Top */
 /* .full {
@@ -32,10 +42,10 @@ body {
     font-size: 20px;
 }
 
-.top-left {
+/* .top-left {
     position: relative;
     flex: 1 0 auto;
-}
+} */
 
 #quicklinks {
     margin-top: 25px;
@@ -137,11 +147,19 @@ body {
     display: grid;
     justify-content: center;
     width: 100%;
+    height: auto;
     text-align: center;
-    padding-top: 20%;
+    margin-top: 165px;
 }
 
 /* Clock */
+.app-container {
+    letter-spacing: -5px;
+    font-weight: 600;
+    line-height: 1;
+    height: 145px;
+}
+
 .add {
     display: block;
 }
@@ -154,12 +172,24 @@ body {
     font-size: 970%;
 }
 
+/* #default-clock {
+    font-size: 800%;
+    color: white;
+    /* position: absolute; */
+    /* width: 300px; */
+    /* height: 130px;
+    z-index: 15; */
+    /* top: 67%; */
+    /* left:37.5%; */
+    /* display: inline-block;  
+} */ 
+
 .milc {
     font-size: 970%;
     color: white;
     /* position: absolute;
     width: 300px; */
-    height: 200px;
+    height: 130px;
     z-index: 15;
     /* top: 67%;
     left: 35%; */
@@ -172,7 +202,7 @@ body {
     /* position: absolute; */
     /* top: 83%; */
     /* left:62%; */
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: all 5s ease-in-out;
     -moz-transition: all 5s ease-in-out;
     -ms-transition: all 5s ease-in-out;
@@ -182,20 +212,34 @@ body {
     left: 32%; */
 }
 
-.greeting {
+#greeting {
     display: block;
-    font-size: 40px;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 1;
     letter-spacing: 0;
     white-space: nowrap;
-    padding: 20px;
+    /* padding: 20px;    */
+    height: 80px;
 }
 
 /* Center Below */
 .center-below {
     display: block;
-    margin-top: 25px;
+    width: 100%;
+    /* margin-top: 25px; */
     text-align: center;
     font-size: 40px;
+}
+
+/* .prompt {
+    padding: 20px;
+} */
+
+h3 {
+    display: block;
+    text-align: center;
+    font-size: 30px;
 }
 
 #focus {
@@ -215,22 +259,28 @@ body {
     display: block;
     width: 100%;
     text-align: center;
- }
+}
 
 /* Todo */
 
 .todobox {
     grid-template-columns: repeat(1,1fr);
-    grid-template-rows: auto 40px;
-    margin-bottom: 0%;
-    bottom: 40px;
+    grid-template-rows: repeat(2, auto);
+    /* margin-bottom: 0%; */
+    /* bottom: 40px; */
+    float: right;
+    /* margin-right: 50px; */
 }
 
 #todo {
-    float: bottom;
-    margin-bottom: 10%;
+    /* float: bottom; */
+    /* margin-bottom: 10%; */
     float: right;
-    margin-right: 100px;
+    margin-right: 20px;
+    font-size: 17px;
+    color: white;
+    /* padding-bottom: 20px; */
+    /* margin-top: 100px; */
  }
 
  .todo {
@@ -243,6 +293,7 @@ body {
     overflow-wrap: break-word;
     overflow: hidden;
     visibility: hidden;
+    border-radius: 2%;
 }
 
 .visible {
@@ -265,31 +316,43 @@ body {
     background-color: #525960;
 }
 
+.todonew {
+    /* height: 50px; */
+}
+
 .todoheader {
-    display:grid;
+    /* display:grid; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: 11px;
+    margin-left: 10px;
+    font-size: 20px;
+    height: 30px;
 }
 
 .todoheaderleft {
-    padding-top: 5px;
+    /* padding-top:7px; */
+    /* padding-left: 5px; */
     position: relative;
-    right: 17%;
+    text-align: left;
+    /* height: 30px; */
+    height: 0px;
 }
 
 .todoheaderright {
-    padding-top: 5px;
     position: relative;
-    left: 17%;
-    background-color: transparent;
+    text-align: right;
+    /* background-color: transparent;
     border: none;
     color: white;
-    font-size: small;
+    font-size: small; */
+    /* padding-top: 3px; */
+    /* padding-right: 5px; */
 }
 
 .todogreeting {
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 .form-control {
@@ -338,35 +401,84 @@ body {
 }
 
 .deletetodo {
+    position: absolute;
     background-color: transparent;
     border: none;
-    color: white;
+    color: transparent;
     font-size: small;
+    left: 94%;
+    text-align: center;
+    line-height: 25px;
+    vertical-align: center;  
+}
+
+.deletetodo:hover{
+    background-color: #545f56;
+    border-radius: 50%;
+    color: white;
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    line-height: 23px;
+    vertical-align:middle;
 }
 
 .options {
-    padding-top: 10px;
+    padding-top: 5px;
     background-color: transparent;
     border: none;
     color: white;
     font-size: small;
 }
 
-.textDisplay {
+.options:hover {
+    background-color: #545f56;
+    border-radius: 50%;
+    color: white;
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    line-height: 23px;
+    vertical-align:middle;
+}
+
+textarea {
     position: relative;
-    overflow-wrap: break-word;
-    width: 225px;
+    left: 20px;
+    max-width: 200px;
+    height: 15px;
+    box-decoration-break: clone;
+}
+
+.contenttodo {
+    max-width: 230px;
     text-align: left;
-    padding-left: 5px;
+    margin-left: 20px;
+    right: 5px;
+    word-break: break-all;
+}
+
+.textDisplay {
+    word-break: break-all;
+    position: relative;
+    background-color: transparent;
+    width: 300px;
+    text-align: left;
+    height: 15px;
+    color:white;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+}
+
+.main {
+    display: none;
 }
 
 .check-marker {
     position: relative;
 }
 
-.main {
-    display: none;
-}
 
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {

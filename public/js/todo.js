@@ -1,4 +1,18 @@
 //A todo list with ability to add, update, and delete 
+function showtoDoList() {
+    $('.bottom-right').toggleClass('visible');
+    $('.form-control').toggleClass('invisible');
+}
+$('#todospan').on('click', showtoDoList);
+
+function showNewToDo() {
+    $('.newtodo').addClass('invisible');
+    $('.form-control').removeClass('invisible');
+    $('.todonew').addClass('hide');
+
+}
+$('#newtodobutton').on('click', showNewToDo);
+
 $(function () {
 
     const state = {
@@ -21,11 +35,9 @@ $(function () {
             .addClass('completed')
             .attr('data-id', toDoList._id);
 
-
         label.append(checkbox);
         label.append('<i class="fas fa-check-square checked">');
         label.append('<i class="far fa-square unchecked">');
-
 
         const elem = $('<span>').text(toDoList.thingToDo).addClass('textDisplay');
 
@@ -62,6 +74,15 @@ $(function () {
             });
     }
 
+    var input = document.getElementById("toDoInput");
+
+    input.addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("enterData").click();
+            console.log("we clikced enter")
+        }
+    });
 
     $('.submit').on('click', function (event) {
         event.preventDefault();
@@ -69,7 +90,6 @@ $(function () {
         const newToDo = {
             thingToDo: $('#toDoInput').val().trim(),
             completed: false,
-
         };
 
         for (let key in newToDo) {
@@ -104,18 +124,14 @@ $(function () {
 
                     render();
                 } else {
-
                     alert('There was a problem with your submission. Please check your entry and try again.');
                 }
             });
-
     })
 
     $('body').on('click', '.completed', function (event) {
         const thisId = $(this).attr('data-id');
         const completed = event.target.checked;
-
-
         const toDoUpdate = state.toDoList[Number(thisId)];
 
         toDoUpdate.completed = completed;
@@ -129,20 +145,15 @@ $(function () {
                 if (data.success) {
                     render();
                 } else {
-
                     alert('There was a problem with your submission. Please check your entry and try again.');
                 }
-
-
             });
     })
-
 
     $('body').on('click', '.delete', function (event) {
         const todoID = $(this).attr('data-id');
 
         console.log(state.toDoList[Number(todoID)])
-
 
         $.ajax({
             url: `/api/toDoSchema/${todoID}`,
@@ -154,13 +165,10 @@ $(function () {
                 if (data.success) {
                     render();
                 } else {
-
                     alert('There was a problem with your submission. Please check your entry and try again.');
                 }
-
             });
     });
 
     render();
 });
-

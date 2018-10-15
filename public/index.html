@@ -21,9 +21,9 @@
     <div class="background-overlay"></div>
 
     <div class="apps">
-        <div class="full"></div>
+        <!-- <div class="full"></div> -->
         <div class="top-row">
-            <div class="top-left"></div>
+            <!-- <div class="top-left"></div> -->
             <div id="quicklinks"></div><span id="favlinks">Links</span>
         </div>
 
@@ -60,26 +60,29 @@
         </div>
 
         <div class="bottom">
-            <div class="bottom-left" id="bottom-left"></div>
+            <!-- <div class="bottom-left" id="bottom-left"></div> -->
 
-            <div class="bottom-right todo" id="todoright">
-                <div class="todoheader">
-                    <div class="todoheaderleft">
-                        <h1>Today</h1>
+            <div class="todobox">
+                <div class="bottom-right todo" id="todoright">
+                    <div class="todoheader">
+                        <div class="todoheaderleft">
+                            <h1>Today</h1>
+                        </div>
+                        <div class="todoheaderright"><button class="options"><i class="fas fa-ellipsis-h"></i></button></div>
                     </div>
-                    <div class="todoheaderright"><button class="options"><i class="fas fa-ellipsis-h"></i></button></div>
-                </div>
-                <div class="todogreeting">
-                    <h2>Add a todo to get started</h2>
-                </div>
-                <div>
-                    <span id="newtodobutton" class="newtodo">New Todo</span>
-                </div>
-                <div class="contenttodo" id="content"></div>
+                    <div class="todogreeting">
+                        <h2>Add a todo to get started</h2>
+                    </div>
+                    <div class="todonew">
+                        <span id="newtodobutton" class="newtodo">New Todo</span>
+                    </div>
+                    <div class="contenttodo" id="content">
 
-                <input type="text" class="form-control" id="toDoInput" placeholder="New Todo">
-                <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
-                <div id="todo" class="app"><span class="to do icon" id="todospan">Todo</span></div>
+                    </div>
+                    <input type="text" class="form-control" id="toDoInput" placeholder="New Todo">
+                    <button type="submit" class="button main submit" id="enterData"><i class="fas fa-share"></i></button>
+                </div>
+                <div id="todo" class="todoicon"><span class="to do icon" id="todospan">Todo</span></div>
             </div>
         </div>
     </div>
