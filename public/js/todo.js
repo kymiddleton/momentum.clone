@@ -1,8 +1,6 @@
 //A todo list with ability to add, update, and delete 
-
 function showtoDoList() {
     $('.bottom-right').toggleClass('visible');
-
     $('.form-control').toggleClass('invisible');
 }
 $('#todospan').on('click', showtoDoList);
@@ -78,6 +76,7 @@ $(function () {
     var input = document.getElementById("toDoInput");
     
    input.addEventListener("keyup", function(event) {
+
         event.preventDefault();
         if (event.keyCode === 13) {
             document.getElementById("enterData").click();

@@ -6,18 +6,28 @@ body {
     background-image: url("../images/Island.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-color: transparent;
     opacity: 1;
+    background-attachment: fixed; 
 }
 
-#background {
+.background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
+
+/* .background-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+} */
 
 /* Top */
 /* .full {
@@ -32,10 +42,10 @@ body {
     font-size: 20px;
 }
 
-.top-left {
+/* .top-left {
     position: relative;
     flex: 1 0 auto;
-}
+} */
 
 #quicklinks {
     margin-top: 25px;
@@ -137,6 +147,7 @@ body {
     display: grid;
     justify-content: center;
     width: 100%;
+    height: auto;
     text-align: center;
     margin-top: 165px;
 }
@@ -161,6 +172,18 @@ body {
     font-size: 970%;
 }
 
+/* #default-clock {
+    font-size: 800%;
+    color: white;
+    /* position: absolute; */
+    /* width: 300px; */
+    /* height: 130px;
+    z-index: 15; */
+    /* top: 67%; */
+    /* left:37.5%; */
+    /* display: inline-block;  
+} */ 
+
 .milc {
     font-size: 970%;
     color: white;
@@ -171,15 +194,15 @@ body {
     /* top: 67%;
     left: 35%; */
     display: inline-block;
-}
+ }
 
-#ampm {
+ #ampm {
     font-size: 22px;
     display: inline-block;
     /* position: absolute; */
     /* top: 83%; */
     /* left:62%; */
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: all 5s ease-in-out;
     -moz-transition: all 5s ease-in-out;
     -ms-transition: all 5s ease-in-out;
@@ -233,8 +256,9 @@ h3 {
     width: 100%;
     text-align: center;
 }
- 
+
 /* Todo */
+
 .todobox {
     grid-template-columns: repeat(1,1fr);
     grid-template-rows: repeat(2, auto);
@@ -380,7 +404,7 @@ h3 {
     font-size: small;
     left: 94%;
     text-align: center;
-    line-height: 25px;
+    line-height: 25px; 
     vertical-align: center;
 }
 
@@ -392,7 +416,7 @@ h3 {
     width: 23px;
     text-align: center;
     line-height: 23px;
-    vertical-align: middle;
+    vertical-align:middle;
 }
 
 .options {
@@ -446,6 +470,10 @@ textarea {
     display: none;
 }
 
+.check-marker {
+    position: relative;
+}
+
 
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
@@ -457,7 +485,7 @@ textarea {
     .top-row {
         font-size: 15px;
     }
- 
+
     .rc {
         font-size: 970%;
     }
@@ -465,7 +493,7 @@ textarea {
     .milc {
         font-size: 970%;
     }
- 
+    
     #ampm {
         font-size: 22px;
     }
