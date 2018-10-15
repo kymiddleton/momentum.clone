@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    height: 50vh;
     display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -20,9 +20,9 @@ body {
 }
 
 /* Top */
-.full {
+/* .full {
     height: 100%;
-}
+} */
 
 .top-row {
     position:absolute;
@@ -142,10 +142,6 @@ body {
 }
 
 /* Clock */
-.rc {
-    font-size: 970%;
-}
-
 .add {
     display: block;
 }
@@ -154,21 +150,16 @@ body {
     display:none;
 }
 
-#default-clock {
-    font-size: 800%;
-    color: white;
-    /* position: absolute; */
-    /* width: 300px; */
-    height: 130px;
-    z-index: 15;
-    /* top: 67%; */
-    /* left:37.5%; */
-    display: inline-block;  
+.rc {
+    font-size: 970%;
 }
 
 .milc {
     font-size: 970%;
     color: white;
+    /* position: absolute;
+    width: 300px; */
+    height: 200px;
     /* position: absolute; */
     /* width: 300px; */
     height: 130px;
@@ -199,6 +190,7 @@ body {
     font-size: 40px;
     letter-spacing: 0;
     white-space: nowrap;
+    padding: 20px;
 }
 
 /* Center Below */
@@ -207,10 +199,11 @@ body {
     margin-top: 25px;
     text-align: center;
     font-size: 40px;
+
 }
 
 #focus {
-    width: 300px;
+    width: 382px;
     margin: 20px auto;
     background: 0;
     border: 0;
@@ -222,28 +215,59 @@ body {
 }
 
 /* Bottom */
+.bottom {
+    display: block;
+    width: 100%;
+    text-align: center;
+ }
+ 
+
 
 /* Todo */
+.todobox {
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(2, auto);
+    margin-bottom: 0%;
+    bottom: 40px;
+    float: right;
+    margin-right: 50px;
+}
 #todo {
-    margin-left: 88%;
-    padding-top: 60px;
-    font-size: 20px;
+    float: bottom;
+    margin-bottom: 10%;
+    float: right;
+    margin-right: 100px;
+ font-size: 20px;
+ color: white;
+ padding-bottom: 20px;
+ margin-top: 30px;
+ }
+
+
+.todo {
+    background-color: rgb(10, 10, 10);
+    grid-template-rows: auto 30px;
+    opacity: .8;
+    height: auto;
+    width: 320px;
+    z-index: 3;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    visibility: hidden;
+    border-radius: 2%;
+
 }
 
-.icon {
+
+/* .icon {
     position: absolute;
-}
+ 
+} */
 
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
 
 .visible {
     visibility: visible;
+
 }
 
 .invisible {
@@ -253,44 +277,43 @@ body {
 .newtodo {
     margin-top:50px;
     border-radius: 20%/50%;
-    height: 90px;
+    height: 150px;
     padding-top: 7px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 7px;
-    width: 300px;
+    margin-bottom: 30px;
     background-color: #525960;
 }
+ .todonew {
+     height: 50px;
+ }
 
-.todo {
-    background-color: rgb(10, 10, 10);
-    grid-template-rows: auto 30px;
-    opacity: .8;
-    height: auto;
-    width: 320px;
-    z-index: 3;
-    position: absolute;
-    margin-top: 400px;
-    margin-bottom: -190px;
-    margin-right: -400px;
-    overflow-wrap: break-word;
-    overflow: hidden;
+.todoheader {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-bottom: 30px;
 }
 
 .todoheaderleft {
-    padding-top: 5px;
+    padding-top:7px;
+    padding-left: 5px;
     position: relative;
-    right: 17%;
+    text-align: left;
+    height: 30px;
+   
 }
 
 .todoheaderright {
-    padding-top: 5px;
     position: relative;
-    left: 17%;
+    text-align: right;
     background-color: transparent;
     border: none;
     color: white;
     font-size: small;
+    padding-top: 3px;
+    padding-right: 5px;
 }
 
 .todogreeting {
@@ -298,11 +321,15 @@ body {
 }
 
 .form-control {
+    background-color: transparent;
+    color: white;
     outline: none;
     border: none;
     width: 300px;
-    height: 15px;
+    height: 40px;
     margin-top:10px;
+    text-align: left;
+    font-size: medium;
 }
 
  input::placeholder {
@@ -323,8 +350,8 @@ body {
 .fancy-checkbox {
     color: black;
     cursor: pointer;
-    position: absolute;
-    width: 20px;
+
+
 }
 
 .center-below {
@@ -336,32 +363,73 @@ body {
 }
 
 .deletetodo {
-    margin-top: 20px;
-    margin-left: 250px;
+position: absolute;
     background-color: transparent;
     border: none;
-    color: white;
+    color: transparent;
     font-size: small;
+   left: 94%;
+   text-align: center;
+   line-height: 25px;
+   vertical-align: center;
+  
+}
+
+.deletetodo:hover{
+    background-color: #545f56;
+  border-radius: 50%;
+  color: white;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  line-height: 23px;
+  vertical-align:middle;
 }
 
 .options {
-    padding-top: 10px;
+    margin-top: 5px;
     background-color: transparent;
     border: none;
     color: white;
     font-size: small;
+    
+}
+.options:hover {
+    background-color: #545f56;
+    border-radius: 50%;
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    line-height: 23px;
+    vertical-align:middle;
+}
+
+textarea {
+    position: relative;
+    left: 20px;
+    max-width: 200px;
+    height: 15px;
+    box-decoration-break: clone;
+}
+.contenttodo {
+    max-width: 230px;
+    text-align: left;
+    margin-left: 20px;
+    right: 5px;
+    word-break: break-all;
 }
 
 .textDisplay {
-    position: absolute;
-    padding-top: 20px;
-    overflow-wrap: break-word;
-    width: 225px;
-    right: 50px;
-}
-
-.check-marker {
-    position: absolute;
+    word-break: break-all;
+    position: relative;
+    background-color: transparent;
+    width: 300px;
+    text-align: left;
+    height: 15px;
+    color:white;
+    outline: none;
+    border: none;
+    vertical-align: middle;
 }
 
 .main {
@@ -371,28 +439,39 @@ body {
 
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
-    body {
-      
-    }
   
+    body {
+
+    }
+ 
     .top-row {
         font-size: 15px;
     }
-  
-    #default-clock {
+ 
+    .center {
+        padding-top: 25%;
+    }
+ 
+    .rc, .milc {
         font-size: 800%;
     }
-  
+ 
+    #ampm {
+        font-size: 22px;
+    }
+ 
     .greeting {
         font-size: 25px;
         white-space: nowrap;
     }
-  
+ 
     .center-below {
         font-size: 25px;
     }
-  
+
+    
+ 
     /* #focus {
-        width: 600px;
+        width: 800px;
     } */
-}
+ }
