@@ -1,11 +1,9 @@
-
 //A todo list with ability to add, update, and delete 
 
 function showtoDoList() {
     $('.bottom-right').toggleClass('visible');
 
     $('.form-control').toggleClass('invisible');
-
 }
 $('#todospan').on('click', showtoDoList);
 
@@ -14,11 +12,6 @@ function showNewToDo() {
     $('.newtodo').addClass('invisible');
     $('.form-control').removeClass('invisible');
     $('.todonew').addClass('hide');
-
-// //A todo list with ability to add, update, and delete 
-
-
-  
 }
 $('#newtodobutton').on('click', showNewToDo);
 
@@ -44,11 +37,8 @@ $(function () {
             .addClass('completed')
             .attr('data-id', todo._id);
 
-
         label.append(checkbox);
       
-
-
         const elem = $('<textarea.readonly>').text(todo.todoItem).addClass('textDisplay');
 
         const elem2 = $('<button class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
@@ -59,7 +49,6 @@ $(function () {
         toDoListElement.append(label, elem, elem2)
         output.append(toDoListElement);
     }
-
 
     const renderToDos = function (outputElement, todo) {
         const output = $(outputElement);
@@ -75,7 +64,6 @@ $(function () {
                 renderToDos('#content', todo);
             });
     }
-
 
     var input = document.getElementById("toDoInput");
 
@@ -97,14 +85,12 @@ $(function () {
         }
     });
 
-
     $('.submit').on('click', function (event) {
         event.preventDefault();
 
         const newToDo = {
             todoItem: $('#toDoInput').val().trim(),
             todoStatus: false,
-
         };
 
         for (let key in newToDo) {
@@ -143,7 +129,6 @@ $(function () {
         const thisId = $(this).attr('data-id');
         const completed = event.target.checked;
 
-
         const toDoUpdate = state.todo[Number(thisId)];
 
         toDoUpdate.completed = completed;
@@ -160,8 +145,6 @@ $(function () {
 
                     alert('There was a problem with your submission. Please check your entry and try again.');
                 }
-
-
             });
     })
 
@@ -170,11 +153,11 @@ $(function () {
         const todoID = $(this).attr('data-id');
 
         console.log(state.todo[Number(todoID)])
-if(todo.length === 0){
-    $('.newtodo').addClass('visible');
-    $('.newtodo').addClass('show');
-    $('.form-control').toggleClass('invisible');
-}
+        if(todo.length === 0){
+          $('.newtodo').addClass('visible');
+          $('.newtodo').addClass('show');
+          $('.form-control').toggleClass('invisible');
+        }
 
         $.ajax({
             url: `/api/todoLog/${todoID}`,
@@ -190,10 +173,8 @@ if(todo.length === 0){
 
                     alert('There was a problem with your submission. Please check your entry and try again.');
                 }
-
             });
     });
 
     render();
 });
-

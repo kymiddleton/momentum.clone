@@ -63,7 +63,7 @@ body {
     padding: 0px;
     height: 20px;
     text-align: left;
-    font-size: 18px; 
+    font-size: 16px; 
     padding-left: 10px;
 }
 
@@ -138,10 +138,17 @@ body {
     justify-content: center;
     width: 100%;
     text-align: center;
-    padding-top: 20%;
+    margin-top: 165px;
 }
 
 /* Clock */
+.app-container {
+    letter-spacing: -5px;
+    font-weight: 600;
+    line-height: 1;
+    height: 145px;
+}
+
 .add {
     display: block;
 }
@@ -157,10 +164,8 @@ body {
 .milc {
     font-size: 970%;
     color: white;
-
     /* position: absolute;
     width: 300px; */
-    height: 200px;
     height: 130px;
     z-index: 15;
     /* top: 67%;
@@ -184,21 +189,30 @@ body {
     left: 32%; */
 }
 
-.greeting {
+#greeting {
     display: block;
-    font-size: 40px;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 1;
     letter-spacing: 0;
     white-space: nowrap;
-    padding: 20px;
+    /* padding: 20px;    */
+    height: 80px;
 }
 
 /* Center Below */
 .center-below {
     display: block;
-    margin-top: 25px;
+    width: 100%;
+    /* margin-top: 25px; */
     text-align: center;
     font-size: 40px;
+}
 
+h3 {
+    display: block;
+    text-align: center;
+    font-size: 30px;
 }
 
 #focus {
@@ -218,32 +232,28 @@ body {
     display: block;
     width: 100%;
     text-align: center;
- }
+}
  
-
-
 /* Todo */
 .todobox {
     grid-template-columns: repeat(1,1fr);
-
     grid-template-rows: repeat(2, auto);
-    margin-bottom: 0%;
-    bottom: 40px;
+    /* margin-bottom: 0%; */
+    /* bottom: 40px; */
     float: right;
-    margin-right: 50px;
+    /* margin-right: 50px; */
 }
+
 #todo {
-    float: bottom;
-    margin-bottom: 10%;
+    /* float: bottom; */
+    /* margin-bottom: 10%; */
     float: right;
-    margin-right: 100px;
- font-size: 20px;
- color: white;
- padding-bottom: 20px;
- margin-top: 30px;
-
- }
-
+    margin-right: 20px;
+    font-size: 17px;
+    color: white;
+    /* padding-bottom: 20px; */
+    /* margin-top: 100px; */
+}
 
 .todo {
     background-color: rgb(10, 10, 10);
@@ -256,20 +266,10 @@ body {
     overflow: hidden;
     visibility: hidden;
     border-radius: 2%;
-
-
 }
-
-
-/* .icon {
-    position: absolute;
- 
-} */
-
 
 .visible {
     visibility: visible;
-
 }
 
 .invisible {
@@ -287,40 +287,44 @@ body {
     margin-bottom: 30px;
     background-color: #525960;
 }
- .todonew {
-     height: 50px;
- }
 
-  
+.todonew {
+    /* height: 50px; */
+}
+
 .todoheader {
-    display:grid;
+    /* display:grid; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: 11px;
+    margin-left: 10px;
+    font-size: 20px;
+    height: 30px;
 }
 
 .todoheaderleft {
-    padding-top:7px;
-    padding-left: 5px;
+    /* padding-top:7px; */
+    /* padding-left: 5px; */
     position: relative;
     text-align: left;
-    height: 30px;
-   
+    /* height: 30px; */
+    height: 0px;
 }
 
 .todoheaderright {
     position: relative;
     text-align: right;
-    background-color: transparent;
+    /* background-color: transparent;
     border: none;
     color: white;
-    font-size: small;
-    padding-top: 3px;
-    padding-right: 5px;
+    font-size: small; */
+    /* padding-top: 3px; */
+    /* padding-right: 5px; */
 }
 
 .todogreeting {
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 .form-control {
@@ -337,7 +341,7 @@ body {
 
  input::placeholder {
      padding-right: 300px;
- }
+}
 
 .fa-square {
     position: relative;
@@ -353,41 +357,42 @@ body {
 .fancy-checkbox {
     color: black;
     cursor: pointer;
-
-
 }
 
-.center-below {
-    font-size: 25px;
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
 }
 
 .fancy-checkbox input[type="checkbox"]:checked~.checked {
     display: none;
 }
 
-.deletetodo {
+.fancy-checkbox input[type="checkbox"]:checked~.unchecked {
+    display: none;
+}
 
-position: absolute;
+.deletetodo {
+    position: absolute;
     background-color: transparent;
     border: none;
     color: transparent;
     font-size: small;
-   left: 94%;
-   text-align: center;
-   line-height: 25px;
-   vertical-align: center;
-  
+    left: 94%;
+    text-align: center;
+    line-height: 25px;
+    vertical-align: center;
 }
 
 .deletetodo:hover{
     background-color: #545f56;
-  border-radius: 50%;
-  color: white;
-  height: 23px;
-  width: 23px;
-  text-align: center;
-  line-height: 23px;
-  vertical-align:middle;
+    border-radius: 50%;
+    color: white;
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    line-height: 23px;
+    vertical-align: middle;
 }
 
 .options {
@@ -396,8 +401,8 @@ position: absolute;
     border: none;
     color: white;
     font-size: small;
-    
 }
+
 .options:hover {
     background-color: #545f56;
     border-radius: 50%;
@@ -408,7 +413,6 @@ position: absolute;
     vertical-align:middle;
 }
 
-
 textarea {
     position: relative;
     left: 20px;
@@ -416,6 +420,7 @@ textarea {
     height: 15px;
     box-decoration-break: clone;
 }
+
 .contenttodo {
     max-width: 230px;
     text-align: left;
@@ -435,7 +440,6 @@ textarea {
     outline: none;
     border: none;
     vertical-align: middle;
-
 }
 
 .main {
@@ -454,12 +458,12 @@ textarea {
         font-size: 15px;
     }
  
-    .center {
-        padding-top: 25%;
+    .rc {
+        font-size: 970%;
     }
- 
-    .rc, .milc {
-        font-size: 800%;
+    
+    .milc {
+        font-size: 970%;
     }
  
     #ampm {
@@ -475,5 +479,7 @@ textarea {
         font-size: 25px;
     }
 
-    
- 
+/* #focus {
+        width: 600px;
+    } */
+}
