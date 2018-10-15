@@ -9,7 +9,7 @@ const LinksSchema = new Schema({
         trim: true,
         required: "Please enter website name"
     },
-    url: {
+    saveurl: {
         type: String,
         trim: true,
         required: "Please enter url"
