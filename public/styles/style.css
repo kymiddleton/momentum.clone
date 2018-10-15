@@ -157,11 +157,10 @@ body {
 .milc {
     font-size: 970%;
     color: white;
+
     /* position: absolute;
     width: 300px; */
     height: 200px;
-    /* position: absolute; */
-    /* width: 300px; */
     height: 130px;
     z-index: 15;
     /* top: 67%;
@@ -226,6 +225,7 @@ body {
 /* Todo */
 .todobox {
     grid-template-columns: repeat(1,1fr);
+
     grid-template-rows: repeat(2, auto);
     margin-bottom: 0%;
     bottom: 40px;
@@ -241,6 +241,7 @@ body {
  color: white;
  padding-bottom: 20px;
  margin-top: 30px;
+
  }
 
 
@@ -255,6 +256,7 @@ body {
     overflow: hidden;
     visibility: hidden;
     border-radius: 2%;
+
 
 }
 
@@ -289,6 +291,7 @@ body {
      height: 50px;
  }
 
+  
 .todoheader {
     display:grid;
     grid-template-columns: repeat(2, 1fr);
@@ -363,6 +366,7 @@ body {
 }
 
 .deletetodo {
+
 position: absolute;
     background-color: transparent;
     border: none;
@@ -404,6 +408,7 @@ position: absolute;
     vertical-align:middle;
 }
 
+
 textarea {
     position: relative;
     left: 20px;
@@ -430,6 +435,7 @@ textarea {
     outline: none;
     border: none;
     vertical-align: middle;
+
 }
 
 .main {
@@ -471,7 +477,3 @@ textarea {
 
     
  
-    /* #focus {
-        width: 800px;
-    } */
- }
