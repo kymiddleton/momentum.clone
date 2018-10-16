@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-// A moving clock set to EST
-
-
-=======
->>>>>>> ce56820abf1de8420a4b609510dbdc9decdae3f4
 $(function() {
     startTime();
 
