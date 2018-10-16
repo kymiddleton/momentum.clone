@@ -13,7 +13,7 @@ body {
 }
 
 .morning {
-    background-image: url("../images/Island.jpg");
+    background-image: url("../images/Morning_Mountain.jpeg");
 }
 
 .afternoon {
@@ -21,7 +21,7 @@ body {
 }
 
 .evening {
-    background-image: url("../images/Mountains.jpg");
+    background-image: url("../images/Island.jpg");
 }
 
 .background {
