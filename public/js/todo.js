@@ -36,7 +36,7 @@ $(function () {
             .attr('data-id', todo._id);
 
         label.append(checkbox);
-      
+
         const elem = $('<textarea.readonly>').text(todo.todoItem).addClass('textDisplay');
 
         const elem2 = $('<button class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
@@ -65,18 +65,7 @@ $(function () {
 
     var input = document.getElementById("toDoInput");
 
-   input.addEventListener("keyup", function(event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-            document.getElementById("enterData").click();
-            console.log("we clikced enter")
-        }
-    });
-
-    var input = document.getElementById("toDoInput");
-    
-   input.addEventListener("keyup", function(event) {
-
+    input.addEventListener("keyup", function (event) {
         event.preventDefault();
         if (event.keyCode === 13) {
             document.getElementById("enterData").click();
@@ -152,10 +141,10 @@ $(function () {
         const todoID = $(this).attr('data-id');
 
         console.log(state.todo[Number(todoID)])
-        if(todo.length === 0){
-          $('.newtodo').addClass('visible');
-          $('.newtodo').addClass('show');
-          $('.form-control').toggleClass('invisible');
+        if (todo.length === 0) {
+            $('.newtodo').addClass('visible');
+            $('.newtodo').addClass('show');
+            $('.form-control').toggleClass('invisible');
         }
 
         $.ajax({
@@ -168,7 +157,7 @@ $(function () {
                 if (data.success) {
                     render();
                 }
-                 else {
+                else {
 
                     alert('There was a problem with your submission. Please check your entry and try again.');
                 }

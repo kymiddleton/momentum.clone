@@ -3,13 +3,25 @@ body {
     display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
-    background-image: url("../images/Island.jpg");
+    /* background-image: url("../images/Island.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
     opacity: 1;
     background-attachment: fixed; 
+}
+
+.morning {
+    background-image: url("../images/Morning_Mountain.jpeg");
+}
+
+.afternoon {
+    background-image: url("../images/Mountains.jpg");
+}
+
+.evening {
+    background-image: url("../images/Island.jpg");
 }
 
 .background {
@@ -256,7 +268,6 @@ h3 {
     width: 100%;
     text-align: center;
 }
-
 /* Todo */
 
 .todobox {
@@ -363,7 +374,7 @@ h3 {
     font-size: medium;
 }
 
- input::placeholder {
+input::placeholder {
      padding-right: 300px;
 }
 
@@ -485,7 +496,6 @@ textarea {
     .top-row {
         font-size: 15px;
     }
-
     .rc {
         font-size: 970%;
     }
