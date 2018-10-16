@@ -73,17 +73,6 @@ $(function () {
         }
     });
 
-    // var input = document.getElementById("toDoInput");
-
-    // input.addEventListener("keyup", function (event) {
-
-    //     event.preventDefault();
-    //     if (event.keyCode === 13) {
-    //         document.getElementById("enterData").click();
-    //         console.log("we clikced enter")
-    //     }
-    // });
-
     $('.submit').on('click', function (event) {
         event.preventDefault();
 
@@ -164,7 +153,7 @@ $(function () {
         })
             .then(function (data) {
                 console.log(data.success);
-
+             
                 if (data.success) {
                     render();
                 }

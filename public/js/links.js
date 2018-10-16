@@ -16,35 +16,35 @@ $(function () {
             .then(function (links) {
                 renderLinks(links);
                 console.log(links);
-            });
-    }
-
-    const toggleLinks = function () {
-
-        $('.inputlink').toggleClass('show');
-
-        runLinksQuery();
-        renderLinks();
-    }
-    $('#favlinks').on('click', toggleLinks);
-
-    const addlinkInputs = function () {
-
-        $('.linkinputs').addClass('show');
-        $('#newlinks').addClass('hide');
-    }
-    $('#newlinks').on('click', addlinkInputs);
-
-    const removelinkInputs = function () {
-
-        $('.linkinputs').removeClass('show');
-        $('#newlinks').removeClass('hide');
-    }
-    $('#nevermind').on('click', removelinkInputs);
-
+              });
+          }
+    
+        const toggleLinks = function () {
+           
+           $('.inputlink').toggleClass('show');
+           
+           runLinksQuery();
+           renderLinks();
+        }
+        $('#favlinks').on('click', toggleLinks);
+    
+        const addlinkInputs = function () {
+           
+            $('.linkinputs').addClass('show');
+            $('#newlinks').addClass('hide');
+         }
+         $('#newlinks').on('click', addlinkInputs);
+        
+         const removelinkInputs = function () {
+           
+            $('.linkinputs').removeClass('show');
+            $('#newlinks').removeClass('hide');
+         }
+         $('#nevermind').on('click', removelinkInputs);
+    
     $('#submitlink').on('click', function (event) {
         event.preventDefault();
-
+    
         const saveLink = {
             linkName: $('#linkname').val().trim(),
             url: $('#linkurl').val().trim(),
@@ -83,11 +83,11 @@ $(function () {
 
         $.ajax({ url: '/api/linksLog', method: 'POST', data: newLink })
             .then(function (data) {
-                console.log(newLink)
-
-                $('#linkname').val('');
-                $('#linkurl').val('');
-
+                    console.log(newLink)
+                
+                    $('#linkname').val('');
+                    $('#linkurl').val('');
+                
             });
         runLinksQuery();
     });
@@ -101,10 +101,10 @@ $(function () {
 
                 // if (data.success) {
                 runLinksQuery();
-                // } else {
-
-                //     alert('Cannot delete');
-                // }
-            });
+            // } else {
+    
+            //     alert('Cannot delete');
+            // }
+        });
     });
 });

@@ -268,7 +268,6 @@ h3 {
     width: 100%;
     text-align: center;
 }
- 
 /* Todo */
 
 .todobox {
@@ -416,7 +415,7 @@ input::placeholder {
     font-size: small;
     left: 94%;
     text-align: center;
-    line-height: 25px;
+    line-height: 25px; 
     vertical-align: center;
 }
 
@@ -428,7 +427,7 @@ input::placeholder {
     width: 23px;
     text-align: center;
     line-height: 23px;
-    vertical-align: middle;
+    vertical-align:middle;
 }
 
 .options {
@@ -497,7 +496,6 @@ textarea {
     .top-row {
         font-size: 15px;
     }
- 
     .rc {
         font-size: 970%;
     }
