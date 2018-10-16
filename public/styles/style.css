@@ -3,13 +3,25 @@ body {
     display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
-    background-image: url("../images/Island.jpg");
+    /* background-image: url("../images/Island.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
     opacity: 1;
     background-attachment: fixed; 
+}
+
+.morning {
+    background-image: url("../images/Island.jpg");
+}
+
+.afternoon {
+    background-image: url("../images/Mountains.jpg");
+}
+
+.evening {
+    background-image: url("../images/Mountains.jpg");
 }
 
 .background {
