@@ -1,3 +1,5 @@
+// A moving clock set to EST
+
 $(function() {
     startTime();
 
@@ -53,12 +55,8 @@ $(function() {
         $("#default-clock").addClass("rc");
         $("#default-clock").removeClass("milc")
     };
-    $('default-clock').click(function(){
-        $('#ampm').toggleClass('remove');
-        $('#ampm').toggleClass('add');
-    });
     toggle = false;
-    $('default-clock').click(function(e) {
+    $('#default-clock').click(function(e) {
         toggle = !toggle;
         $('#ampm').toggleClass('remove');
         $('#ampm').toggleClass('add');

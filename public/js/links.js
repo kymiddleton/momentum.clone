@@ -1,26 +1,20 @@
 // Easy access to favorite links
+$(function () {
 
-
-
-
-$( function(){
-
-
-    const renderLinks = function (links) {   
+    const renderLinks = function (links) {
         $('#savedlinks').empty();
         links.forEach(e => renderloca(`<div id="alllinks"><a id="hovlink" href="${e.saveurl}"><img src="https://www.google.com/s2/favicons?domain=${e.saveurl}"><button type="submit" id ="linkbutton">${e.linkName}</button></a><span id="dellink" data-id=${e._id}>x</span></div>`));
         };
     
-    
     const renderloca = function (links) {
         $('#savedlinks').append(links);
-          };
-    
-          const runLinksQuery = function () {
-    
-            $.ajax({ url: '/api/linksLog', method: 'GET' })
-              .then(function(links) {
-                  renderLinks(links);
+    };
+
+    const runLinksQuery = function () {
+
+        $.ajax({ url: '/api/linksLog', method: 'GET' })
+            .then(function (links) {
+                renderLinks(links);
                 console.log(links);
               });
           }
@@ -86,7 +80,7 @@ $( function(){
                 return;
             }
         }
-       
+
         $.ajax({ url: '/api/linksLog', method: 'POST', data: newLink })
             .then(function (data) {
                     console.log(newLink)
@@ -95,26 +89,22 @@ $( function(){
                     $('#linkurl').val('');
                 
             });
-            runLinksQuery();
+        runLinksQuery();
     });
-    
+
     $('#savedlinks').on('click', '#dellink', function (event) {
         console.log($(this).data('id'));
         const linkID = $(this).data('id');
-        $.ajax({url: `/api/linksLog/${linkID}`, method: 'DELETE'})
-        .then(function(data) {
-            // console.log(data.success);
-    
-            // if (data.success) {
+        $.ajax({ url: `/api/linksLog/${linkID}`, method: 'DELETE' })
+            .then(function (data) {
+                // console.log(data.success);
+
+                // if (data.success) {
                 runLinksQuery();
             // } else {
     
             //     alert('Cannot delete');
             // }
         });
-        });
-    
-
-       
-
     });
+});
