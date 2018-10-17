@@ -109,6 +109,7 @@ and if not adds to string in order to make a complete URL.
                 
             });
         runLinksQuery();
+        removelinkInputs();
     });
 
 
