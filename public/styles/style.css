@@ -246,11 +246,11 @@ h3 {
 #todo {
     margin: auto;
     height: auto;      
-    font-size: 17px;
+    font-size: 21px;
     color: white;
     position: absolute;
-    right: 20px;
-    bottom: 16px;
+    right: 65px;
+    bottom: 40px;
 } 
 
 .todo {
@@ -474,13 +474,18 @@ textarea {
 
 /* Quote */
 .quote-container {
-    display: grid;
+    position: fixed;
+    /* display: grid; */
     /* display: flex; */
     /* align-items: center; */
     justify-content: center;
-    width: 100%;
-    height: 57px;
     text-align: center;
+    width: 350px;
+    height: 75px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
 }
 
 .quote-text {
@@ -521,6 +526,10 @@ textarea {
         font-size: 25px;
     }
 
+    .quote-container {
+        width: 100%;
+    }
+    
 /* #focus {
         width: 600px;
     } */

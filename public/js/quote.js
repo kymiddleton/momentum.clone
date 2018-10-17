@@ -1,16 +1,13 @@
 // Inspirational quote each day
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    $.ajax({ url: '/api/quotesLog', method: 'GET' })
-    .then(function (quote) {
-        renderLinks(quote);
-        console.log(quote);
-      });
-  }
-
-
-
+//     $.ajax({ url: '/api/quotesLog', method: 'GET' })
+//     .then(function (quote) {
+//         renderLinks(quote);
+//         console.log(quote);
+//       });
+//   }
 
 // $(function () {
 //     const state = {
@@ -45,13 +42,13 @@ $(document).ready(function() {
 
 
 //----------------------------------------------//
-// const quotes = [
-//     '"You are unrepeatable.  There is a magic about you that is all your own. - D.M. Dellinger"',
-// ]
+const quotes = [
+    '"You are unrepeatable.  There is a magic about you that is all your own. - D.M. Dellinger"',
+]
 
-// function newQuote() {
-//     let randomNumber = Math.floor(Math.random() * (quotes.length));
-//     document.getElementById('quote-container').innerHTML = quotes[randomNumber];
-// }
+function newQuote() {
+    let randomNumber = Math.floor(Math.random() * (quotes.length));
+    document.getElementById('quote-container').innerHTML = quotes[randomNumber];
+}
 
-// $('.quote-text').append(quotes);
+$('.quote-text').append(quotes);
