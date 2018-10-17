@@ -255,29 +255,21 @@ h3 {
     display: block;
     width: 100%;
     text-align: center;
+    position: fixed;
+    margin: auto;
 }
 
 /* Todo */
 
-.todobox {
-    grid-template-columns: repeat(1,1fr);
-    grid-template-rows: repeat(2, auto);
-    /* margin-bottom: 0%; */
-    /* bottom: 40px; */
-    float: right;
-    /* margin-right: 50px; */
-}
-
 #todo {
-    /* float: bottom; */
-    /* margin-bottom: 10%; */
-    float: right;
-    margin-right: 20px;
+    margin: auto;
+    height: auto;      
     font-size: 17px;
     color: white;
-    /* padding-bottom: 20px; */
-    /* margin-top: 100px; */
-}
+position: absolute;
+right: 20px;
+bottom: 16px;
+} 
 
 .todo {
     background-color: rgb(10, 10, 10);
@@ -289,7 +281,10 @@ h3 {
     overflow-wrap: break-word;
     overflow: hidden;
     visibility: hidden;
+    position: absolute;
+    bottom: 75px;
     border-radius: 2%;
+    right: 20px;
 }
 
 .visible {
@@ -298,6 +293,14 @@ h3 {
 
 .invisible {
     visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .2s, opacity .2s linear;
+}
+.gone {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .2s, opacity .2s linear;
+ 
 }
 
 .newtodo {
@@ -312,8 +315,11 @@ h3 {
     background-color: #525960;
 }
 
+
 .todonew {
-    /* height: 50px; */
+    height: 50px;
+    position: relative;
+    left: 100px;
 }
 
 .todoheader {
@@ -348,7 +354,10 @@ h3 {
 }
 
 .todogreeting {
-    /* padding-bottom: 30px; */
+    padding-bottom: 30px;
+    margin-top: 15px;
+    position: relative;
+    left: 75px;
 }
 
 .form-control {
@@ -361,6 +370,7 @@ h3 {
     margin-top:10px;
     text-align: left;
     font-size: medium;
+    margin-left: 6px;
 }
 
  input::placeholder {
@@ -402,10 +412,14 @@ h3 {
     border: none;
     color: transparent;
     font-size: small;
-    left: 94%;
+    left: 90%;
     text-align: center;
     line-height: 25px; 
     vertical-align: center;
+}
+
+.optionlist {
+    display: block;
 }
 
 .deletetodo:hover{
@@ -443,6 +457,7 @@ textarea {
     max-width: 200px;
     height: 15px;
     box-decoration-break: clone;
+    
 }
 
 .contenttodo {

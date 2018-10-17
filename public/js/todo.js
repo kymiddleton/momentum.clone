@@ -9,10 +9,16 @@ function showNewToDo() {
 
     $('.newtodo').addClass('invisible');
     $('.form-control').removeClass('invisible');
-    $('.todonew').addClass('hide');
+    $('.todonew').addClass('gone');
+   
 }
 $('#newtodobutton').on('click', showNewToDo);
 
+function listoptions() {
+    $('.toDo').append('<ul style="list-style-type:none"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>');
+   
+}
+$('#options').on('click', listoptions)
 
 $(function () {
     const state = {
@@ -39,7 +45,7 @@ $(function () {
       
         const elem = $('<textarea.readonly>').text(todo.todoItem).addClass('textDisplay');
 
-        const elem2 = $('<button class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
+        const elem2 = $('<button id = "options"class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
             .addClass('delete')
             .attr('data-id', todo._id)
             .append('<i>')
@@ -64,16 +70,6 @@ $(function () {
     }
 
     var input = document.getElementById("toDoInput");
-
-   input.addEventListener("keyup", function(event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-            document.getElementById("enterData").click();
-            console.log("we clikced enter")
-        }
-    });
-
-    var input = document.getElementById("toDoInput");
     
    input.addEventListener("keyup", function(event) {
 
@@ -86,7 +82,8 @@ $(function () {
 
     $('.submit').on('click', function (event) {
         event.preventDefault();
-
+        $('.todogreeting').addClass('hide');
+        $('.newtodo').addClass('hide');
         const newToDo = {
             todoItem: $('#toDoInput').val().trim(),
             todoStatus: false,
@@ -99,8 +96,7 @@ $(function () {
             }
         }
 
-        $('.todogreeting').addClass('hide');
-        $('.newtodo').addClass('hide');
+      
 
 
         $.ajax({
