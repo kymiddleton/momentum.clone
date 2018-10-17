@@ -1,4 +1,9 @@
 // Easy access to favorite links
+/*
+Links section: Contains saved links with ability to access on click 
+and add or delete links
+*/
+
 $(function () {
 
     const renderLinks = function (links) {
@@ -10,15 +15,23 @@ $(function () {
         $('#savedlinks').append(links);
     };
 
+ /*
+ runlinks query will complete and get request and then run the render
+ function to append list to links area
+ */   
     const runLinksQuery = function () {
-
         $.ajax({ url: '/api/linksLog', method: 'GET' })
             .then(function (links) {
                 renderLinks(links);
                 console.log(links);
               });
           }
-    
+
+/*
+toggleLinks is used to make saved links box to appear/disappear when clicking "links"
+addLinkInputs/removelinkInputs allow the input to appear/disppear when clicking.
+*/
+
         const toggleLinks = function () {
            
            $('.inputlink').toggleClass('show');
@@ -41,6 +54,12 @@ $(function () {
             $('#newlinks').removeClass('hide');
          }
          $('#nevermind').on('click', removelinkInputs);
+
+
+/*
+submitlink on click takes in the name and the url to save and post to db.  It will check to see if http is included
+and if not adds to string in order to make a complete URL.
+*/
     
     $('#submitlink').on('click', function (event) {
         event.preventDefault();
@@ -92,6 +111,11 @@ $(function () {
         runLinksQuery();
     });
 
+
+    /*
+    to delete a link when clicking the delete button
+    */
+
     $('#savedlinks').on('click', '#dellink', function (event) {
         console.log($(this).data('id'));
         const linkID = $(this).data('id');
@@ -104,7 +128,7 @@ $(function () {
             // } else {
     
             //     alert('Cannot delete');
-            // }
+            // } 
         });
     });
 });
