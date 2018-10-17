@@ -267,6 +267,7 @@ h3 {
     display: block;
     width: 100%;
     text-align: center;
+    bottom: 0;
 }
 /* Todo */
 
@@ -321,6 +322,10 @@ h3 {
     padding-bottom: 7px;
     margin-bottom: 30px;
     background-color: #525960;
+}
+
+.icon {
+    position: absolute;
 }
 
 .todonew {
@@ -485,6 +490,23 @@ textarea {
     position: relative;
 }
 
+/* Quote */
+.quote-container {
+    display: grid;
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    width: 100%;
+    height: 57px;
+    text-align: center;
+}
+
+.quote-text {
+    text-align: center;
+    font-size: 17px;
+    color: white;
+    white-space: pre-wrap;
+}
 
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
