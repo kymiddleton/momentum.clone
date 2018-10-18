@@ -6,9 +6,9 @@ module.exports = function (app) {
 
     // GET request: Route for retrieving quotes from the database.
     app.get('/api/quotesLog', function (req, res) {
-        console.log('-------inspirational quote----------');
-        console.log(req.body)
-        db.quote.find({quoteDate:req.body.quoteDate})
+        // console.log('-------inspirational quote----------');
+        // console.log(req.body)
+        db.quote.find()
             .then(function (dbquote) {
                 res.json(dbquote);
             })
