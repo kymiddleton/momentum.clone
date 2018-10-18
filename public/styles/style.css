@@ -108,17 +108,21 @@ body {
 }
 
 #linkbutton {
-    color: white;
+    color: lightgrey;
     background-color: rgb(10, 10, 10);
     border: none;
-    font-size: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 140px;
+    text-align: left;
 }
 
 .chromelink {
-    color: white;
+    color: lightgrey;
     background-color: rgb(10, 10, 10);
     border: none;
-    font-size: 20px;  
+    font-size: 18px;  
+    cursor: pointer; 
 }
 
 .inputlink {
@@ -127,7 +131,7 @@ body {
 
 .slinkinput {
     padding: 5px;
-    color: white
+    color: lightgrey;
 } 
 
 .linkinputs {
@@ -136,11 +140,25 @@ body {
 
 #dellink {
     display: none;
+    cursor: pointer;
+    color: lightgrey;
+
 }
 
 #alllinks:hover #dellink {
     display: inline;
 }
+#favlinks:hover #favlinks:active {
+    color: white;
+} 
+
+.chromelink:hover, .chromelink:active {
+    color: white;
+} 
+
+#linkbutton:hover, #linkbutton:active {
+    color: white;
+} 
 
 .show {
     display: block;
