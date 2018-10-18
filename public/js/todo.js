@@ -1,4 +1,6 @@
 //A todo list with ability to add, update, and delete 
+
+
 function showtoDoList() {
     $('.bottom-right').toggleClass('visible');
     $('.form-control').toggleClass('invisible');
@@ -10,15 +12,15 @@ function showNewToDo() {
     $('.newtodo').addClass('invisible');
     $('.form-control').removeClass('invisible');
     $('.todonew').addClass('gone');
-   
+
 }
 $('#newtodobutton').on('click', showNewToDo);
 
-function listoptions() {
-    $('.toDo').append('<ul style="list-style-type:none"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>');
-   
-}
-$('#options').on('click', listoptions)
+/**
+ * 
+ * Creates a state variable with a todo object with a render function
+ * 
+ */
 
 $(function () {
     const state = {
@@ -30,6 +32,15 @@ $(function () {
         runToDoQuery();
     }
 
+    /**
+     * 
+     * appends a todo to the page with an ID, a checkbox, and a delete button
+     * @param {Object} outputElement object rendered
+     * @param {Schema}todo todo object properties
+     * @param {Object}_id assigns property to unique item id
+     * 
+     */
+
     const renderToDo = function (outputElement, todo, _id) {
         const output = $(outputElement);
 
@@ -38,7 +49,7 @@ $(function () {
         const label = $('<label>').addClass('check-marker');
         const checkbox = $('<input type="checkbox">')
             .attr('checked', todo.todoStatus.completed)
-            .addClass('completed')
+            .toggleClass('completed')
             .attr('data-id', todo._id);
 
         label.append(checkbox);
@@ -54,11 +65,25 @@ $(function () {
         output.append(toDoListElement);
     }
 
+    /**
+     * 
+     * renders all to do items in list
+     * @param {Object} outputElement object rendered
+     * @param {Schema}todo todo object properties
+     * 
+     */
+
     const renderToDos = function (outputElement, todo) {
         const output = $(outputElement);
         output.empty();
         todo.forEach((todo) => renderToDo(outputElement, todo));
     }
+
+    /**
+     * 
+     * GET route to retrieve todo model from database
+     * 
+     */
 
     const runToDoQuery = function () {
 
@@ -69,15 +94,27 @@ $(function () {
             });
     }
 
+    /**
+     * submits input field when enter key is pressed
+     * @param {Attribute} event when the enter keys is pressed
+     * 
+     */
+
     var input = document.getElementById("toDoInput");
-    
-   input.addEventListener("keyup", function(event) {
+
+    input.addEventListener("keyup", function (event) {
         event.preventDefault();
         if (event.keyCode === 13) {
             document.getElementById("enterData").click();
-            console.log("we clikced enter")
+            console.log("we clicked enter")
         }
     });
+
+    /**
+     * when the submit action is performed, hide greeting, hide new todo button, and submit contents of input field. Posts new item to database.
+     * @param {Attribute} event on click
+     * 
+     */
 
     $('.submit').on('click', function (event) {
         event.preventDefault();
@@ -94,8 +131,6 @@ $(function () {
                 return;
             }
         }
-
-      
 
 
         $.ajax({
@@ -119,13 +154,24 @@ $(function () {
 
     })
 
-    $('body').on('click', '.completed', function (event) {
+    /**
+      * 
+      * Update route
+      * 
+      */
+
+    $('body').on('click', function (event) {
         const thisId = $(this).attr('data-id');
         const completed = event.target.checked;
+        console.log(event.target.checked)
+
 
         const toDoUpdate = state.todo[Number(thisId)];
 
         toDoUpdate.completed = completed;
+        if (completed === true){
+            toDoUpdate.set(textarea, '');
+        };
 
         $.ajax({
             url: `/api/todoLog/${thisId}`,
@@ -142,24 +188,23 @@ $(function () {
             });
     })
 
+    /**
+     * 
+     * When delete button is pressed, remove item with specific id from database
+     * 
+     */
 
     $('body').on('click', '.delete', function (event) {
         const todoID = $(this).attr('data-id');
 
         console.log(state.todo[Number(todoID)])
-        if (todo.length === 0) {
-            $('.newtodo').addClass('visible');
-            $('.newtodo').addClass('show');
-            $('.form-control').toggleClass('invisible');
-        }
-
         $.ajax({
             url: `/api/todoLog/${todoID}`,
             method: 'DELETE'
         })
             .then(function (data) {
                 console.log(data.success);
-             
+
                 if (data.success) {
                     render();
                 }
