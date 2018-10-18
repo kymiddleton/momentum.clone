@@ -1,4 +1,10 @@
-// Inspirational quote each day
+// New inspirational quote displays when page loads. 
+
+//A random number is set to pull quotes from the database. 
+//The newQuote function includes an ajex route to the quotesLog in the database.
+//A get method is used to pull a new quote.
+//Quotes are displayed to the 'quote-text' area in the HTML file.
+//A newQuote is displayed each time the page is refreshed. 
 
 const randomNumber = Math.floor((Math.random() * 9) + 1);
 
