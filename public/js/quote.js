@@ -1,54 +1,27 @@
 // Inspirational quote each day
 
-// $(document).ready(function() {
+const randomNumber = Math.floor((Math.random() * 9) + 1);
 
-//     $.ajax({ url: '/api/quotesLog', method: 'GET' })
-//     .then(function (quote) {
-//         renderLinks(quote);
-//         console.log(quote);
-//       });
-//   }
+const newQuote = function () {
+    $.ajax({
+        url: '/api/quotesLog',
+        method: 'GET',
+        dataType: 'json',
+    }).then(function (quote) {
+        $('.quote-text').html(`<p>${quote[randomNumber].quoteText}</p><p>-${quote[randomNumber].quoteAuthor}`);
+    });
+};
 
-// $(function () {
-//     const state = {
-//         quote: [],
-//     };
-
-//     const date = new Date().getDate();
-
-//     const whichQuote = {
-//         quoteDate: date
-//     };
-
-//     const render = function () {
-//         $('quote-body').empty();
-//         runQuoteQuery();
-//     }
-
-//     const runQuoteQuery = function () {
-
-//         $.ajax({ url: '/api/todoLog', method: 'PUT', data: whichQuote})
-//             .then(function (quote) {
-//                 state.quote = quote
-//                 renderQuote('quote-text', quote);
-//             });
-//     }
-
-//     render();
-// });
-
-// $('.quote-text').append(message);
-// $('.quote-source').append(message);
-
+window.onload = newQuote();
 
 //----------------------------------------------//
-const quotes = [
-    '"You are unrepeatable.  There is a magic about you that is all your own. - D.M. Dellinger"',
-]
+// const quotes = [
+//     '"You are unrepeatable.  There is a magic about you that is all your own. - D.M. Dellinger"',
+// ]
 
-function newQuote() {
-    let randomNumber = Math.floor(Math.random() * (quotes.length));
-    document.getElementById('quote-container').innerHTML = quotes[randomNumber];
-}
+// function newQuote() {
+//     let randomNumber = Math.floor(Math.random() * (quotes.length));
+//     document.getElementById('quote-container').innerHTML = quotes[randomNumber];
+// }
 
-$('.quote-text').append(quotes);
+// $('.quote-text').append(quotes);
