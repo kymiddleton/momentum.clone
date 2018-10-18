@@ -13,15 +13,15 @@ body {
 }
 
 .morning {
-    background-image: url("../images/Morning_Mountain.jpeg");
+    background-image: url("../images/chris-liu-beers-40853-unsplash.jpg");
 }
 
 .afternoon {
-    background-image: url("../images/Mountains.jpg");
+    background-image: url("../images/sudhagar-shanmugasigamani-66397-unsplash.jpg");
 }
 
 .evening {
-    background-image: url("../images/Island.jpg");
+    background-image: url("../images/shane-perry-11379-unsplash.jpg");
 }
 
 .background {
@@ -529,7 +529,7 @@ textarea {
     .quote-container {
         width: 100%;
     }
-    
+
 /* #focus {
         width: 600px;
     } */
