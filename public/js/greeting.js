@@ -1,7 +1,7 @@
 // Greeting for morning, afternoon and evening. 
 
 const hours = new Date().getHours();
-// const hours = 22;
+// const hours = 6;
 const morning = ('morning');
 const afternoon = ('afternoon');
 const evening = ('evening');
