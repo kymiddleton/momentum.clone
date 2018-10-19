@@ -283,6 +283,9 @@ h3 {
     opacity: 0;
     transition: visibility 0s .2s, opacity .2s linear;
 }
+.line {
+    text-decoration: line-through;
+}
 
 .newtodo {
     margin-top:50px;
@@ -371,24 +374,6 @@ input::placeholder {
     left:100px;
 }
 
-.completed,
-.fancy-checkbox {
-    color: black;
-    cursor: pointer;
-}
-
-.fancy-checkbox input[type="checkbox"],
-.fancy-checkbox .checked {
-    display: none;
-}
-
-.fancy-checkbox input[type="checkbox"]:checked~.checked {
-    display: none;
-}
-
-.fancy-checkbox input[type="checkbox"]:checked~.unchecked {
-    display: none;
-}
 
 .deletetodo {
     position: absolute;
