@@ -1,3 +1,19 @@
+/**
+ * Function of the Clock
+ * startTime function is for 24hour time
+ * appendZero adds a Zero to both clocks
+ * Base12hour function controls the Am Pm on twelveTime
+ * TwelveTime funtion is for 12hour time
+ * Toggling Between Milc(MilitaryClock) and Rc(Regular), To keep them centered
+ * Click functions covers on the toggle between startTime and twelveTime
+ * Also controls the Am and Pm transtion to fade out by Jquery fade out function and a Set Invertnal time. 
+ * 
+ * 
+ * 
+ */
+
+
+
 $(function() {
     startTime();
 
