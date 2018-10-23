@@ -83,7 +83,7 @@ $(function () {
         let url = saveLink.url;
         console.log(url);
         let saveurl = '';
-        const beg1 = ('https://');
+        const beg1 = ('http://');
         const beg2 = ('https://www.');
         let found = url.includes('http');
         if (found) {
