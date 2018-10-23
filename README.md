@@ -5,30 +5,38 @@ Google Chrome has a browser extension called Momentum. It's a custom page that r
 
 The purpose of this project it to create a clone of the Momentum dashboard with the following features:  
 
-• Keep track of tasks with Todo list.  
+• Keep track of tasks with Todo list.
+
 • Links and search
+
 • Check the time
+
 • See the weather and forecast
+
 • New inspirational photo and quote each day
 
 The attached images illustrate the homescreen for the completed project by greeting:
 
-Morning: /images/Momentum_Morning_2.jpeg
-Afternoon: /images/Momentum_Afternoon_2.jpeg
-Evening: /images/Momentum_Evening_2.jpeg
+![Morning:](public/images/Momentum_Morning_2.jpeg)
+
+![Afternoon:](public/images/Momentum_Afternoon_2.jpeg)
+
+![Evening:](public/images/Momentum_Evening_2.jpeg)
+
+# Dependencies:
+The following applications need to be installed in order to run the Momentum.clone app.
+- Node.js
+- Express
+- Mongoose
 
 # Getting Started
-To start this project a clone of the repository needs to be made to a local machine.  Once the repository is cloned run <npm install> which is needed to run the app.  Once completed additional Node packages need to be installed.  
+To start this project clone a copy of the project repository from Github onto your machine.  Once the repository is cloned run `npm install` which is needed to run the app.  Then install the additional Node packages below: 
 
 - NPM express
 - NPM mongoose
 - NPM moment
 
-# Prerequisites:
-The following applications need to be installed inorder to run the Momentum.clone app.
-- Node.js
-- Express
-- Mongoose
+Once completed run `node server.js` or `nodemon server.js`.
 
 # Deployment
 The project is deployed with Heroku.
