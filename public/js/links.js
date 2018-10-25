@@ -71,7 +71,7 @@ $(function () {
     
     $('#submitlink').on('click', function (event) {
         event.preventDefault();
-    
+
         const saveLink = {
             linkName: $('#linkname').val().trim(),
             url: $('#linkurl').val().trim(),
@@ -83,7 +83,7 @@ $(function () {
         let url = saveLink.url;
         console.log(url);
         let saveurl = '';
-        const beg1 = ('https://');
+        const beg1 = ('http://');
         const beg2 = ('https://www.');
         let found = url.includes('http');
         if (found) {
@@ -110,11 +110,11 @@ $(function () {
 
         $.ajax({ url: '/api/linksLog', method: 'POST', data: newLink })
             .then(function (data) {
-                    console.log(newLink)
-                
-                    $('#linkname').val('');
-                    $('#linkurl').val('');
-                
+                console.log(newLink)
+
+                $('#linkname').val('');
+                $('#linkurl').val('');
+
             });
         runLinksQuery();
         removelinkInputs();

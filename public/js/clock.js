@@ -86,5 +86,15 @@ $(function() {
             console.log("mc" +toggle);
         }
     });
-    
+    $('#default-clock').on('click', function() {
+        if ($('#ampm').css('opacity') == 0) {
+            $('#ampm').css('opacity', 1);
+        }
+        else {
+            $('#ampm').css('opacity', 0);
+        }
+    });
+    //$('#default-clock').on('click', function() {
+        // $(".rc").toggleClass("milc");
+        // $(".milc").toggleClass("rc");});
 });

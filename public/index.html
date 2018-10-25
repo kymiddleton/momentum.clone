@@ -29,13 +29,12 @@
         <div id="inputbox" class="inputlink">
             <p class="slinkinput"><a href="https://www.google.com"><img src="https://www.google.com/s2/favicons?domain=https://www.google.com"><button
                         type="submit" class="chromelink">Chrome Tab</button></a></p>
-            <!-- <p class= "slinkinput"><a href="chrome://apps/"><button type="submit" class="chromelink">Apps</button></a></p>    -->
             <div id="savedlinks" class="slinkinput"></div>
             <p id="newlinks" class="slinkinput">New Link</p>
 
             <form class="linkinputs">
-                <input id="linkname" name="linkname" type="text" placeholder="Name" /><span id="nevermind">x</span><br>
-                <input type="url" id="linkurl" name="linkurl" placeholder="URL" />
+                <input id="linkname" name="linkname" type="text" placeholder="Name" autocomplete="off"/><span id="nevermind">x</span><br>
+                <input type="url" id="linkurl" name="linkurl" placeholder="URL" autocomplete="off" />
                 <button type="submit" id="submitlink">ADD</button>
             </form>
         </div>
