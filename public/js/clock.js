@@ -1,4 +1,19 @@
-// A moving clock set to EST
+/**
+ * Function of the Clock
+ * startTime function is for 24hour time
+ * appendZero adds a Zero to both clocks
+ * Base12hour function controls the Am Pm on twelveTime
+ * TwelveTime funtion is for 12hour time
+ * Toggling Between Milc(MilitaryClock) and Rc(Regular), To keep them centered
+ * Click functions covers on the toggle between startTime and twelveTime
+ * Also controls the Am and Pm transtion to fade out by Jquery fade out function and a Set Invertnal time. 
+ * 
+ * 
+ * 
+ */
+
+
+
 $(function() {
     startTime();
 
@@ -53,23 +68,21 @@ $(function() {
         document.getElementById('default-clock').innerHTML = hour + ":" + minute;
         $("#default-clock").addClass("rc");
         $("#default-clock").removeClass("milc")
+        
+        
     };
-    $('default-clock').click(function(){
-        $('#ampm').toggleClass('remove');
-        $('#ampm').toggleClass('add');
-    });
     toggle = false;
-    $('default-clock').click(function(e) {
+    $('#default-clock').click(function(e) {
         toggle = !toggle;
-        $('#ampm').toggleClass('remove');
-        $('#ampm').toggleClass('add');
-        // $("#default-clock").toggleClass("milc");
-        // $("#default-clock").toggleClass("rc");
-        if (toggle) {
+        if (!toggle) {
             startTime();
+            $('#ampm').css('opacity', 1);
+            $('#ampm').hide();
       console.log("rc" +toggle);
         } else {
             twelveTime();
+            $('#ampm').show();
+            setInterval(function() {$('#ampm').fadeOut(2000);}, 8000);
             console.log("mc" +toggle);
         }
     });

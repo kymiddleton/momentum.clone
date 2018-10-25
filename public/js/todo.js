@@ -1,173 +1,219 @@
 //A todo list with ability to add, update, and delete 
 
+
 function showtoDoList() {
     $('.bottom-right').toggleClass('visible');
-    $('.form-control').addClass('invisible');
-  
+    $('.form-control').toggleClass('invisible');
 }
 $('#todospan').on('click', showtoDoList);
 
 function showNewToDo() {
-    $('.newtodo').addClass('hide');
+
+    $('.newtodo').addClass('invisible');
     $('.form-control').removeClass('invisible');
-    $('.todogreeting').addClass('hide');
-  
-// }
-// $('#newtodobutton').on('click', showNewToDo);
+    $('.todonew').addClass('gone');
 
+}
+$('#newtodobutton').on('click', showNewToDo);
 
-// $(function () {
-//     const state = {
-//         todo: [],
-//     };
+/**
+ * 
+ * Creates a state variable with a todo object with a render function
+ * 
+ */
 
-//     const render = function () {
-//         $('#content').empty();
-//         runToDoQuery();
-//     }
+$(function () {
+    const state = {
+        todo: [],
+    };
 
-//     const renderToDo = function (outputElement, todo, _id) {
-//         const output = $(outputElement);
+    const render = function () {
+        $('#content').empty();
+        runToDoQuery();
+    }
 
-//         const toDoListElement = $('<div>').addClass('toDo');
+    /**
+     * 
+     * appends a todo to the page with an ID, a checkbox, and a delete button
+     * @param {Object} outputElement object rendered
+     * @param {Schema}todo todo object properties
+     * @param {Object}_id assigns property to unique item id
+     * 
+     */
 
-//         const label = $('<label>').addClass('check-marker');
-//         const checkbox = $('<input type="checkbox">')
-//             .attr('checked', todo.todoStatus.completed)
-//             .addClass('completed')
-//             .attr('data-id', todo._id);
+    const renderToDo = function (outputElement, todo, _id) {
+        const output = $(outputElement);
 
+        const toDoListElement = $('<div>').addClass('toDo');
 
-//         label.append(checkbox);
-      
+        const label = $('<label>').addClass('check-marker');
+        const checkbox = $('<input type="checkbox">')
+            .attr('checked', todo.todoStatus.completed)
+            .toggleClass('completed')
+            .attr('data-id', todo._id);
 
+        label.append(checkbox);
 
-//         const elem = $('<span>').text(todo.todoItem).addClass('textDisplay');
+        const elem = $('<textarea.readonly>').text(todo.todoItem).addClass('textDisplay');
 
-//         const elem2 = $('<button class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
-//             .addClass('delete')
-//             .attr('data-id', todo._id)
-//             .append('<i>')
-//         console.log(elem);
-//         toDoListElement.append(label, elem, elem2)
-//         output.append(toDoListElement);
-//     }
+        const elem2 = $('<button id = "options"class = "deletetodo"><i class="fas fa-ellipsis-h"></i></button>')
+            .addClass('delete')
+            .attr('data-id', todo._id)
+            .append('<i>')
+        console.log(elem);
+        toDoListElement.append(label, elem, elem2)
+        output.append(toDoListElement);
+    }
 
+    /**
+     * 
+     * renders all to do items in list
+     * @param {Object} outputElement object rendered
+     * @param {Schema}todo todo object properties
+     * 
+     */
 
-//     const renderToDos = function (outputElement, todo) {
-//         const output = $(outputElement);
-//         output.empty();
-//         todo.forEach((todo) => renderToDo(outputElement, todo));
-//     }
+    const renderToDos = function (outputElement, todo) {
+        const output = $(outputElement);
+        output.empty();
+        todo.forEach((todo) => renderToDo(outputElement, todo));
+    }
 
-//     const runToDoQuery = function () {
+    /**
+     * 
+     * GET route to retrieve todo model from database
+     * 
+     */
 
-//         $.ajax({ url: "/api/todoLog", method: "GET" })
-//             .then(function (todo) {
-//                 state.todo = todo
-//                 renderToDos('#content', todo);
-//             });
-//     }
+    const runToDoQuery = function () {
+
+        $.ajax({ url: "/api/todoLog", method: "GET" })
+            .then(function (todo) {
+                state.todo = todo
+                renderToDos('#content', todo);
+            });
+    }
+
+    /**
+     * submits input field when enter key is pressed
+     * @param {Attribute} event when the enter keys is pressed
+     * 
+     */
 
     var input = document.getElementById("toDoInput");
-    
-   input.addEventListener("keyup", function(event) {
+
+    input.addEventListener("keyup", function (event) {
         event.preventDefault();
         if (event.keyCode === 13) {
             document.getElementById("enterData").click();
-            console.log("we clikced enter")
+            console.log("we clicked enter")
         }
     });
 
-//     $('.submit').on('click', function (event) {
-//         event.preventDefault();
+    /**
+     * when the submit action is performed, hide greeting, hide new todo button, and submit contents of input field. Posts new item to database.
+     * @param {Attribute} event on click
+     * 
+     */
 
-//         const newToDo = {
-//             todoItem: $('#toDoInput').val().trim(),
-//             todoStatus: false,
+    $('.submit').on('click', function (event) {
+        event.preventDefault();
+        $('.todogreeting').addClass('hide');
+        $('.newtodo').addClass('hide');
+        const newToDo = {
+            todoItem: $('#toDoInput').val().trim(),
+            todoStatus: false,
+        };
 
-//         };
-
-//         for (let key in newToDo) {
-//             if (newToDo[key] === '') {
-//                 alert('Please Enter Something To Do!');
-//                 return;
-//             }
-//         }
-
-
-
-//         $.ajax({
-//             url: '/api/todoLog',
-//             method: 'POST',
-//             data: newToDo
-//         }).then(
-//             function (data) {
-//                 if (data.success) {
-
-//                     console.log('data', data)
-//                     $('#content').val('');
-//                     $('#content').focus();
-
-//                     render();
-//                 } else {
-
-//                     alert('There was a problem with your submission. Please check your entry and try again.');
-//                 }
-//             });
-
-//     })
-
-//     $('body').on('click', '.completed', function (event) {
-//         const thisId = $(this).attr('data-id');
-//         const completed = event.target.checked;
+        for (let key in newToDo) {
+            if (newToDo[key] === '') {
+                alert('Please Enter Something To Do!');
+                return;
+            }
+        }
 
 
-//         const toDoUpdate = state.todo[Number(thisId)];
+        $.ajax({
+            url: '/api/todoLog',
+            method: 'POST',
+            data: newToDo
+        }).then(
+            function (data) {
+                if (data.success) {
 
-//         toDoUpdate.completed = completed;
+                    console.log('data', data)
+                    $('#content').val('');
+                    $('#content').focus();
 
-//         $.ajax({
-//             url: `/api/todoLog/${thisId}`,
-//             method: 'PUT',
-//             data: toDoUpdate
-//         })
-//             .then(function (data) {
-//                 if (data.success) {
-//                     render();
-//                 } else {
+                    render();
+                } else {
 
-//                     alert('There was a problem with your submission. Please check your entry and try again.');
-//                 }
+                    alert('There was a problem with your submission. Please check your entry and try again.');
+                }
+            });
 
+    })
 
-//             });
-//     })
+    /**
+      * 
+      * Update route
+      * 
+      */
 
-
-//     $('body').on('click', '.delete', function (event) {
-//         const todoID = $(this).attr('data-id');
-
-//         console.log(state.todo[Number(todoID)])
+    $('body').on('click', function (event) {
+        const thisId = $(this).attr('data-id');
+        const completed = event.target.checked;
+        console.log(event.target.checked)
 
 
-//         $.ajax({
-//             url: `/api/todoLog/${todoID}`,
-//             method: 'DELETE'
-//         })
-//             .then(function (data) {
-//                 console.log(data.success);
+        const toDoUpdate = state.todo[Number(thisId)];
 
-//                 if (data.success) {
-//                     render();
-//                 } else {
+        toDoUpdate.completed = completed;
+        if (completed === true){
+            toDoUpdate.set(textarea, '');
+        };
 
-//                     alert('There was a problem with your submission. Please check your entry and try again.');
-//                 }
+        $.ajax({
+            url: `/api/todoLog/${thisId}`,
+            method: 'PUT',
+            data: toDoUpdate
+        })
+            .then(function (data) {
+                if (data.success) {
+                    render();
+                } else {
 
-//             });
-//     });
+                    alert('There was a problem with your submission. Please check your entry and try again.');
+                }
+            });
+    })
 
-//     render();
-// });
+    /**
+     * 
+     * When delete button is pressed, remove item with specific id from database
+     * 
+     */
 
+    $('body').on('click', '.delete', function (event) {
+        const todoID = $(this).attr('data-id');
+
+        console.log(state.todo[Number(todoID)])
+        $.ajax({
+            url: `/api/todoLog/${todoID}`,
+            method: 'DELETE'
+        })
+            .then(function (data) {
+                console.log(data.success);
+
+                if (data.success) {
+                    render();
+                }
+                else {
+
+                    alert('There was a problem with your submission. Please check your entry and try again.');
+                }
+            });
+    });
+
+    render();
+});

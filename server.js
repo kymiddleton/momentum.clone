@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 require('./routes/api-routes-links.js')(app);
+require('./routes/api-routes-quotes.js')(app);
 require('./routes/api-routes-todo.js')(app);
 require('./routes/html-routes.js')(app);
   
