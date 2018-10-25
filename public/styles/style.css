@@ -3,7 +3,6 @@ body {
     display: block;
     font-family: 'Roboto', sans-serif;
     color: white;
-    /* background-image: url("../images/Island.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -32,20 +31,6 @@ body {
     bottom: 0;
 }
 
-/* .background-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-} */
-
-/* Top */
-/* .full {
-    height: 100%;
-} */
-
 .top-row {
     position:absolute;
     top:0;
@@ -53,11 +38,6 @@ body {
     right:25px;
     font-size: 20px;
 }
-
-/* .top-left {
-    position: relative;
-    flex: 1 0 auto;
-} */
 
 #quicklinks {
     margin-top: 25px;
@@ -172,7 +152,6 @@ body {
     font-size: 15px;  
     color: lightgrey;
     padding-top: 5px;
-    
 }
 
 #dellink {
@@ -261,7 +240,6 @@ body {
     line-height: 1;
     letter-spacing: 0;
     white-space: nowrap;
-    /* padding: 20px;    */
     height: 80px;
 }
 
@@ -269,7 +247,6 @@ body {
 .center-below {
     display: block;
     width: 100%;
-    /* margin-top: 25px; */
     text-align: center;
     font-size: 40px;
 }
@@ -302,7 +279,6 @@ h3 {
 }
 
 /* Todo */
-
 #todo {
     margin: auto;
     height: auto;      
@@ -434,7 +410,6 @@ input::placeholder {
     left:100px;
 }
 
-
 .deletetodo {
     position: absolute;
     background-color: transparent;
@@ -520,9 +495,6 @@ textarea {
 /* Quote */
 .quote-container {
     position: fixed;
-    /* display: grid; */
-    /* display: flex; */
-    /* align-items: center; */
     justify-content: center;
     text-align: center;
     width: 350px;
@@ -543,13 +515,10 @@ textarea {
 /* Media Stylesheet */
 @media only screen and (max-width: 600px) {
   
-    body {
-
-    }
- 
     .top-row {
         font-size: 15px;
     }
+
     .rc {
         font-size: 970%;
     }
@@ -574,8 +543,4 @@ textarea {
     .quote-container {
         width: 100%;
     }
-
-/* #focus {
-        width: 600px;
-    } */
 }

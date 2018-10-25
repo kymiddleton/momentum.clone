@@ -1,12 +1,14 @@
 // New inspirational quote displays when page loads. 
 
-//A random number is set to pull quotes from the database. 
-//The newQuote function includes an ajex route to the quotesLog in the database.
-//A get method is used to pull a new quote.
-//Quotes are displayed to the 'quote-text' area in the HTML file.
-//A newQuote is displayed each time the page is refreshed. 
-
+/**
+ * A random number is set to pull quotes from the database. 
+ */
 const randomNumber = Math.floor((Math.random() * 9) + 1);
+
+/**
+ * GET route to retrive quotes from database.
+ * @param {Object} quote quote rendered.
+ */
 
 const newQuote = function () {
     $.ajax({
@@ -18,16 +20,7 @@ const newQuote = function () {
     });
 };
 
+/**
+ * New Quote displayed on page refresh. 
+ */
 window.onload = newQuote();
-
-//----------------------------------------------//
-// const quotes = [
-//     '"You are unrepeatable.  There is a magic about you that is all your own. - D.M. Dellinger"',
-// ]
-
-// function newQuote() {
-//     let randomNumber = Math.floor(Math.random() * (quotes.length));
-//     document.getElementById('quote-container').innerHTML = quotes[randomNumber];
-// }
-
-// $('.quote-text').append(quotes);
