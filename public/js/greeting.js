@@ -7,6 +7,7 @@
  * The evening message displays if the time is equal or greater than 17 hours to 24 hours.
  * The greeting appends to the 'period' area in the HTML>
  */
+
 const hours = new Date().getHours();
 // const hours = 6;
 const morning = ('morning');
