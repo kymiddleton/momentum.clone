@@ -40,7 +40,6 @@ $(function () {
      * @param {Object}_id assigns property to unique item id
      * 
      */
-
     const renderToDo = function (outputElement, todo, _id) {
         const output = $(outputElement);
 
@@ -64,6 +63,11 @@ $(function () {
         toDoListElement.append(label, elem, elem2)
         output.append(toDoListElement);
     }
+
+    function linethrough(){
+        $('.textDisplay').toggleClass('line')
+    }
+     $('#checkboxcheck').on('click', linethrough)
 
     /**
      * 
@@ -160,7 +164,7 @@ $(function () {
       * 
       */
 
-    $('body').on('click', function (event) {
+    $('body').on('click', '.check-marker', function (event) {
         const thisId = $(this).attr('data-id');
         const completed = event.target.checked;
         console.log(event.target.checked)
@@ -168,10 +172,17 @@ $(function () {
 
         const toDoUpdate = state.todo[Number(thisId)];
 
+        const toDoUpdate = {
+            todoStatus: completed
+        }
         toDoUpdate.completed = completed;
-        if (completed === true){
-            toDoUpdate.set(textarea, '');
-        };
+        if (completed === true) {
+            $('.toDo').addClass('line')
+         } else {
+             $('.toDo').removeClass('line')};
+        
+
+        
 
         $.ajax({
             url: `/api/todoLog/${thisId}`,

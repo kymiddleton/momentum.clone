@@ -410,6 +410,10 @@ input::placeholder {
     left:100px;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 .deletetodo {
     position: absolute;
     background-color: transparent;
@@ -492,6 +496,9 @@ textarea {
     position: relative;
 }
 
+.line{
+    text-decoration: line-through;
+}
 /* Quote */
 .quote-container {
     position: fixed;

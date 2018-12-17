@@ -19,7 +19,7 @@
   "homepage": "https://github.com/kymiddleton/momentum.clone#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "mongoose": "^5.3.1",
+    "mongoose": "^5.3.13",
     "nodemon": "^1.18.4"
   }
 }

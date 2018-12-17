@@ -47,7 +47,7 @@ module.exports = function (app) {
     app.delete('/api/todoLog/:id', function (req, res) {
 
         db.todo.deleteOne({_id: req.params.id})
-            .then(function (dbtodos) {
+            .then(function (dbtodo) {
                 res.json({
                     success: true
                 })
